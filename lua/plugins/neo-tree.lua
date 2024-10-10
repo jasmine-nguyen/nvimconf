@@ -1,12 +1,25 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
+  version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>n',  ':Neotree filesystem toggle left<CR>')
-  end
+    vim.keymap.set("n", "\\", ":Neotree filesystem toggle left<CR>")
+    vim.keymap.set("n", "<leader>f", ":Neotree source=filesystem focus<CR>")
+  end,
+  keys = {
+    { "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
+  },
+  opts = {
+    filesystem = {
+      window = {
+        mappings = {
+          ["\\"] = "close_window",
+        },
+      },
+    },
+  },
 }
