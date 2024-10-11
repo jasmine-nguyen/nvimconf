@@ -38,11 +38,14 @@ return {
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
-			--  local builtin = require('telescope.builtin')
-			--  vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-			--  vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-			--  vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-			--  vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+			local actions = require("telescope.actions")
+			default = {
+				mapping = {
+					["<c-v>"] = actions.select_vertical,
+					["<c-s>"] = actions.select_horizontal,
+					["<c-t>"] = actions.select_tab,
+				},
+			}
 		end,
 	},
 	{
