@@ -17,9 +17,52 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
+			-- Apex server setup
 			lspconfig.apex_ls.setup({})
-			lspconfig.lua_ls.setup({})
-			lspconfig.ts_ls.setup({})
+			-- Lua server setup
+			lspconfig.lua_ls.setup({
+				filetypes = { "lua" },
+				settings = {
+					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
+						completion = {
+							callSnippet = "Replace",
+						},
+						diagnostics = {
+							globals = { "vim" },
+						},
+						format = {
+							defaultConfig = {},
+						},
+						hint = {
+							enable = true,
+						},
+					},
+				},
+			})
+			-- Typescript server setup
+			lspconfig.ts_ls.setup({
+				cmd = { "typescript-language-server", "--stdio" },
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+				},
+				init_options = {
+					hostInfo = "neovim",
+				},
+				single_file_support = true,
+				settings = {
+					completions = {
+						completeFunctionCalls = true,
+					},
+				},
+			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(event)
