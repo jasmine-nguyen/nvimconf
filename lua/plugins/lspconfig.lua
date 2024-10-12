@@ -75,7 +75,7 @@ return {
 					local map = function(mode, keys, action, desc)
 						desc = desc or ""
 						local opts = { noremap = true, silent = true, desc = desc }
-						vim.keymap.set(mode, keys, action, desc)
+						vim.keymap.set(mode, keys, action, opts)
 					end
 
 					-- Jump to the definition of the word under your cursor.
