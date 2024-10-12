@@ -22,8 +22,10 @@ return {
 		end
 		vim.keymap.set("n", "\\", minifiles_toggle, { desc = "File explorer" })
 
-		-- MiniSurround setup
-		require("mini.surround").setup()
+		-- MiniIndentscope setup
+		require("mini.indentscope").setup({
+			symbol = "┋",
+		})
 
 		-- MiniPairs setup
 		require("mini.pairs").setup({
@@ -32,9 +34,12 @@ return {
 			},
 		})
 
-		-- MiniIndentscope setup
-		require("mini.indentscope").setup({
-			symbol = "┋",
-		})
+		-- MiniSurround setup
+		require("mini.surround").setup()
+
+		-- MiniTrailspace setup
+		require("mini.trailspace").setup()
+		vim.keymap.set("n", "<leader>tll", "<cmd>lua MiniTrailspace.trim_last_lines()<CR>", { desc	= "Trim all trailing empty lines"})
+		vim.keymap.set("n", "<leader>ts", "<cmd>lua MiniTrailspace.trim()<CR>", { desc	= "Trim all trailing whitespace"})
 	end,
 }
