@@ -27,6 +27,20 @@ return {
 			symbol = "┋",
 		})
 
+		-- MiniMove setup
+		require("mini.move").setup({
+			mappings = {
+				left = "<S-h>",
+				right = "<S-l>",
+				down = "<S-j>",
+				up = "<S-k>",
+				line_left = "<S-h>",
+				line_right = "<S-l>",
+				line_down = "<S-j>",
+				line_up = "<S-k>",
+			},
+		})
+
 		-- MiniPairs setup
 		require("mini.pairs").setup({
 			mappings = {
@@ -39,7 +53,17 @@ return {
 
 		-- MiniTrailspace setup
 		require("mini.trailspace").setup()
-		vim.keymap.set("n", "<leader>tll", "<cmd>lua MiniTrailspace.trim_last_lines()<CR>", { desc	= "Trim all trailing empty lines"})
-		vim.keymap.set("n", "<leader>ts", "<cmd>lua MiniTrailspace.trim()<CR>", { desc	= "Trim all trailing whitespace"})
+		vim.keymap.set(
+			"n",
+			"<leader>tll",
+			"<cmd>lua MiniTrailspace.trim_last_lines()<CR>",
+			{ desc = "Trim all trailing empty lines" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>ts",
+			"<cmd>lua MiniTrailspace.trim()<CR>",
+			{ desc = "Trim all trailing whitespace" }
+		)
 	end,
 }
