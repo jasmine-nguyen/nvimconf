@@ -15,7 +15,12 @@ return {
 				width_preview = 25,
 			},
 		})
-		vim.keymap.set("n", "<leader>\\", "<cmd>lua MiniFiles.open()<CR>", { desc = "File explorer" })
+		local minifiles_toggle = function(...)
+			if not MiniFiles.close() then
+				MiniFiles.open(...)
+			end
+		end
+		vim.keymap.set("n", "\\", minifiles_toggle, { desc = "File explorer" })
 
 		-- MiniSurround setup
 		require("mini.surround").setup()
