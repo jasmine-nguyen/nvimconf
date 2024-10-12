@@ -3,6 +3,7 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.opt.termguicolors = true
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -45,14 +46,26 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
+-- The amount of space on screen a Tab character can occupy
+vim.opt.tabstop = 2
+
+-- Amount of characters Neovim will use to indent a line
+vim.opt.shiftwidth = 2;
+
+-- Controls whether or not Neovim should transform a Tab character to spaces
+vim.opt.expandtab = false
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
+vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', { desc = 'Save' })
+-- Modify x and X to delete text without changing the internal registers
+vim.keymap.set({'n', 'x'}, 'x', '"_x')
+vim.keymap.set({'n', 'x'}, 'X', '"_d')
+-- Select all text in current buffer
+vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 -- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
@@ -82,8 +95,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
-
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
