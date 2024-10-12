@@ -17,6 +17,8 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
 			-- Apex server setup
 			lspconfig.apex_ls.setup({})
 			-- Lua server setup
@@ -44,6 +46,7 @@ return {
 			})
 			-- Typescript server setup
 			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
 				cmd = { "typescript-language-server", "--stdio" },
 				filetypes = {
 					"javascript",
