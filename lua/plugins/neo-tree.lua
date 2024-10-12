@@ -3,21 +3,18 @@ return {
   version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
     "BurntSushi/ripgrep",
   },
-  config = function()
-    vim.keymap.set("n", "\\", ":Neotree filesystem toggle left<CR>")
-    vim.keymap.set("n", "<leader>f", ":Neotree source=filesystem focus<CR>")
-  end,
   keys = {
     { "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
+    {"<leader>f", ":Neotree source=filesystem focus <CR>"}
   },
   opts = {
     filesystem = {
       filtered_items = {
-        visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+        visible = true,
         hide_dotfiles = false,
         hide_gitignored = true,
       },
