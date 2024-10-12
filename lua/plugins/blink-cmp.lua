@@ -11,7 +11,7 @@ return {
 		keymap = {
 			show = "<C-space>",
 			hide = { "<C-d>" },
-			-- accept = "<CR>",
+			accept = "<CR>",
 			select_prev = { "<Up>", "<C-p>" },
 			select_next = { "<Down>", "<C-n>" },
 
