@@ -16,7 +16,7 @@ return {
 			mason = true,
 			mini = {
 				enabled = true,
-				indentscope_color = "lavender",
+				indentscope_color = "teal",
 			},
 			native_lsp = {
 				enabled = true,
