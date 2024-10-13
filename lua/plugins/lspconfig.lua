@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "apex_ls", "lua_ls", "ts_ls" },
+				ensure_installed = { "apex_ls", "lua_ls", "lwc_ls", "golangci_lint_ls", "gopls", "ts_ls" },
 			})
 		end,
 	},
@@ -19,8 +19,10 @@ return {
 			local lspconfig = require("lspconfig")
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 			-- Apex server setup
 			lspconfig.apex_ls.setup({})
+
 			-- Lua server setup
 			lspconfig.lua_ls.setup({
 				filetypes = { "lua" },
@@ -44,6 +46,15 @@ return {
 					},
 				},
 			})
+			-- LWC server setup
+			lspconfig.lwc_ls.setup({})
+
+			-- Go server setup
+			lspconfig.gopls.setup({})
+
+			-- Golangci lint server setup
+			lspconfig.golangci_lint_ls.setup({})
+
 			-- Typescript server setup
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
