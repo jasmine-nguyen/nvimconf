@@ -4,6 +4,9 @@ return {
 		-- MiniAi setup
 		require("mini.ai").setup({ n_lines = 500 })
 
+		-- MiniComment setup
+		require("mini.comment").setup()
+
 		-- MiniFiles setup
 		require("mini.files").setup({
 			use_as_default_explorer = true,
