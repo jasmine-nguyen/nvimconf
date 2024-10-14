@@ -15,7 +15,7 @@ vim.opt.number = true
 vim.opt.showmode = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -27,7 +27,7 @@ vim.opt.undofile = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -41,7 +41,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -50,7 +50,7 @@ vim.opt.cursorline = true
 vim.opt.tabstop = 2
 
 -- Amount of characters Neovim will use to indent a line
-vim.opt.shiftwidth = 2;
+vim.opt.shiftwidth = 2
 
 -- Controls whether or not Neovim should transform a Tab character to spaces
 vim.opt.expandtab = false
@@ -59,31 +59,29 @@ vim.opt.expandtab = false
 vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
-vim.keymap.set('n', '<leader>w', '<cmd>write<CR>', { desc = 'Save' })
+vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
+vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>", { desc = "Quit" })
 -- Modify x and X to delete text without changing the internal registers
-vim.keymap.set({'n', 'x'}, 'x', '"_x')
-vim.keymap.set({'n', 'x'}, 'X', '"_d')
+vim.keymap.set({ "n", "x" }, "x", '"_x')
+vim.keymap.set({ "n", "x" }, "X", '"_d')
 -- Select all text in current buffer
-vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
-
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
 
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', { desc = 'Move focus to the right window'})
-vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', { desc = 'Move focus to the upper window' })
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Move focus to the upper window" })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 -- Sync clipboard between OS and Neovim.
@@ -91,5 +89,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
