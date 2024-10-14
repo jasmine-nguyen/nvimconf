@@ -24,6 +24,7 @@ return {
 					background = true,
 				},
 			},
+			neotree = true,
 			telescope = {
 				enabled = true,
 			}

@@ -7,24 +7,6 @@ return {
 		-- MiniComment setup
 		require("mini.comment").setup()
 
-		-- MiniFiles setup
-		require("mini.files").setup({
-			use_as_default_explorer = true,
-			windows = {
-				max_number = math.huge,
-				preview = false,
-				width_focus = 30,
-				width_nofocus = 20,
-				width_preview = 25,
-			},
-		})
-		local minifiles_toggle = function(...)
-			if not MiniFiles.close() then
-				MiniFiles.open(...)
-			end
-		end
-		vim.keymap.set("n", "\\", minifiles_toggle, { desc = "File explorer" })
-
 		-- MiniIndentscope setup
 		require("mini.indentscope").setup({
 			symbol = "┋",
@@ -32,6 +14,16 @@ return {
 
 		-- MiniMove setup
 		require("mini.move").setup({
+			mappings = {
+				left = "<S-h>",
+				right = "<S-l>",
+				down = "<S-j>",
+				up = "<S-k>",
+				line_left = "<S-h>",
+				line_right = "<S-l>",
+				line_down = "<S-j>",
+				line_up = "<S-k>",
+			},
 		})
 
 		-- MiniPairs setup
