@@ -58,6 +58,20 @@ vim.opt.expandtab = false
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+
+-- Filetypes
+vim.filetype = on
+vim.filetype.add({
+  extension = {
+    cls = 'apex',
+    apex = 'apex',
+    trigger = 'apex',
+    soql = 'soql',
+    sosl = 'sosl',
+    log = 'sflog',
+  }
+})
+
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>", { desc = "Quit" })
