@@ -10,7 +10,7 @@ return {
 		transparent_background = true,
 		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 		compile = true,
-		flavour = "frappe",
+		flavour = "macchiato",
 		integrations = {
 			cmp = true,
 			mason = true,
