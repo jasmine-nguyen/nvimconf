@@ -58,20 +58,6 @@ vim.opt.expandtab = false
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-
--- Filetypes
-vim.filetype = on
-vim.filetype.add({
-  extension = {
-    cls = 'apex',
-    apex = 'apex',
-    trigger = 'apex',
-    soql = 'soql',
-    sosl = 'sosl',
-    log = 'sflog',
-  }
-})
-
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>", { desc = "Quit" })
@@ -80,7 +66,6 @@ vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "X", '"_d')
 -- Select all text in current buffer
 vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
-
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move focus to the right window" })
