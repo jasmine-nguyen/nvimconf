@@ -72,8 +72,6 @@ vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
 -- modify x and x to delete text without changing the internal registers
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "x", '"_d')
--- select all text in current buffer
-vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggvg<cr>")
 --  see `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<c-h>", ":wincmd h<cr>", { desc = "move focus to the left window" })
 vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "move focus to the right window" })
