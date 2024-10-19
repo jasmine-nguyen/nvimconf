@@ -1,6 +1,7 @@
 return {
 	"folke/tokyonight.nvim",
 	lazy = false,
+	disable = true,
 	priority = 1000,
 	opts = {
 		terminal_colors = true,
@@ -40,7 +41,4 @@ return {
 			}
 		},
 	},
-	config = function()
-		vim.cmd [[colorscheme tokyonight-moon]]
-	end
 }

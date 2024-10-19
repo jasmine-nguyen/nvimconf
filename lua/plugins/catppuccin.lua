@@ -1,7 +1,6 @@
 return {
 	"catppuccin/nvim",
 	lazy = true,
-	disable = true,
 	priority = 1000,
 	name = "catppuccin",
 	init = function()
@@ -13,7 +12,7 @@ return {
 		compile = true,
 		flavour = "macchiato",
 		integrations = {
-			cmp = true,
+			alpha = true,
 			mason = true,
 			mini = {
 				enabled = true,
@@ -21,6 +20,20 @@ return {
 			},
 			native_lsp = {
 				enabled = true,
+				virtual_text = {
+					errors = { "italic" },
+					hints = { "italic" },
+					warnings = { "italic" },
+					information = { "italic" },
+					ok = { "italic" },
+				},
+				underlines = {
+					errors = { "underline" },
+					hints = { "underline" },
+					warnings = { "underline" },
+					information = { "underline" },
+					ok = { "underline" },
+				},
 				inlay_hints = {
 					background = true,
 				},
@@ -28,7 +41,7 @@ return {
 			neotree = true,
 			telescope = {
 				enabled = true,
-			}
+			},
 		},
 	},
 }
