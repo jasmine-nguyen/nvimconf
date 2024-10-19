@@ -5,16 +5,14 @@ return {
 	opts = {
 		ensure_installed = {
 			"apex",
+			"javascript",
 			"json",
 			"lua",
-			"luadoc",
 			"go",
 			"gomod",
 			"gosum",
-			"markdown",
-			"query",
-			"vim",
-			"vimdoc",
+			"proto",
+			"typescript",
 		},
 		auto_install = true,
 		highlight = {
