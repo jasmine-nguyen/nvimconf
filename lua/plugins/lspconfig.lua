@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "apex_ls", "lua_ls", "lwc_ls", "golangci_lint_ls", "gopls", "ts_ls" },
+				ensure_installed = { "apex_ls", "jsonls", "lua_ls", "lwc_ls", "golangci_lint_ls", "gopls", "ts_ls" },
 			})
 		end,
 	},
@@ -23,9 +23,12 @@ return {
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
 				apex_jar_path = "$Home/lsp/apex-jorje-lsp.jar",
-				apex_enable_semantic_errors = true, -- Whether to allow Apex Language Server to surface semantic errors
+				apex_enable_semantic_errors = true,   -- Whether to allow Apex Language Server to surface semantic errors
 				apex_enable_completion_statistics = true, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 			})
+
+			-- JSON server setup
+			lspconfig.jsonls.setup({})
 
 			-- Lua server setup
 			lspconfig.lua_ls.setup({
@@ -50,6 +53,7 @@ return {
 					},
 				},
 			})
+
 			-- LWC server setup
 			lspconfig.lwc_ls.setup({})
 
@@ -58,6 +62,9 @@ return {
 
 			-- Golangci lint server setup
 			lspconfig.golangci_lint_ls.setup({})
+
+			-- Proto server setup
+			lspconfig.protols.setup({})
 
 			-- Typescript server setup
 			lspconfig.ts_ls.setup({
