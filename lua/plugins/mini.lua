@@ -4,9 +4,6 @@ return {
 		-- MiniAi setup
 		require("mini.ai").setup({ n_lines = 500 })
 
-		-- MiniComment setup
-		require("mini.comment").setup()
-
 		-- MiniIndentscope setup
 		require("mini.indentscope").setup({
 			symbol = "┋",
