@@ -3,7 +3,7 @@ return {
   version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
+    "nvim-tree/nvim-material-icon",
     "MunifTanjim/nui.nvim",
     "BurntSushi/ripgrep",
   },
