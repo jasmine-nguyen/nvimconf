@@ -101,36 +101,36 @@ return {
 					end
 
 					-- Jump to the definition of the word under your cursor.
-					--  To jump back, press <C-t>.
-					map("n", "gd", vim.lsp.buf.definition, "Goto lsp definition")
+					-- To jump back, press <C-t>.
+					map("n", "gd", vim.lsp.buf.definition, "[g]oto [d]efinition")
 
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
-					--  For example, in C this would take you to the header.
-					map("n", "gD", vim.lsp.buf.declaration, "Goto lsp declaration")
+					-- For example, in C this would take you to the header.
+					map("n", "gD", vim.lsp.buf.declaration, "[g]oto lsp [D]eclaration")
 
 					-- Find references for the word under your cursor.
-					map("n", "gr", vim.lsp.buf.references, "Goto lsp reference")
+					map("n", "gr", vim.lsp.buf.references, "[g]oto [r]eferences")
 
 					-- Jump to the implementation of the word under your cursor.
-					--  Useful when your language has ways of declaring types without an actual implementation.
-					map("n", "gi", vim.lsp.buf.implementation, "Goto lsp implementation")
+					-- Useful when your language has ways of declaring types without an actual implementation.
+					map("n", "gi", vim.lsp.buf.implementation, "[g]oto [i]mplementation")
 
 					-- Jump to the type of the word under your cursor.
-					--  Useful when you're not sure what type a variable is and you want to see
-					--  the definition of its *type*, not where it was *defined*.
-					map("n", "gt", vim.lsp.buf.type_definition, "Goto lsp definition")
+					-- Useful when you're not sure what type a variable is and you want to see
+					-- the definition of its *type*, not where it was *defined*.
+					map("n", "gt", vim.lsp.buf.type_definition, "[g]oto [t]ype definition")
 
 					-- Fuzzy find all the symbols in your current document.
-					--  Symbols are things like variables, functions, types, etc.
-					map("n", "<leader>ds", vim.lsp.buf.document_symbol, "Goto lsp document symbol")
+					-- Symbols are things like variables, functions, types, etc.
+					map("n", "<leader>ds", vim.lsp.buf.document_symbol, "[d]ocument [s]ymbol")
 
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
-					map("n", "<leader>rn", vim.lsp.buf.rename, "Lsp rename")
+					map("n", "<leader>rn", vim.lsp.buf.rename, "[r]e[n]ame")
 
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
-					map("n", "<leader>ca", vim.lsp.buf.code_action, "Lsp code action")
+					map("n", "<leader>ca", vim.lsp.buf.code_action, "[c]ode [a]ction")
 				end,
 			})
 		end,
