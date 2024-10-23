@@ -4,13 +4,9 @@ return {
 	priority = 1000,
 	name = "catppuccin",
 	init = function()
-		vim.cmd.colorscheme("catppuccin")
+		vim.cmd.colorscheme("catppuccin-frappe")
 	end,
 	opts = {
-		transparent_background = true,
-		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-		compile = true,
-		flavour = "macchiato",
 		integrations = {
 			alpha = true,
 			mason = true,

@@ -31,28 +31,7 @@ return {
 			lspconfig.jsonls.setup({})
 
 			-- Lua server setup
-			lspconfig.lua_ls.setup({
-				filetypes = { "lua" },
-				settings = {
-					Lua = {
-						runtime = {
-							version = "LuaJIT",
-						},
-						completion = {
-							callSnippet = "Replace",
-						},
-						diagnostics = {
-							globals = { "vim" },
-						},
-						format = {
-							defaultConfig = {},
-						},
-						hint = {
-							enable = true,
-						},
-					},
-				},
-			})
+			lspconfig.lua_ls.setup{}
 
 			-- LWC server setup
 			lspconfig.lwc_ls.setup({})
