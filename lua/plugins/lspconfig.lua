@@ -31,7 +31,7 @@ return {
 			lspconfig.jsonls.setup({})
 
 			-- Lua server setup
-			lspconfig.lua_ls.setup{}
+			lspconfig.lua_ls.setup({})
 
 			-- LWC server setup
 			lspconfig.lwc_ls.setup({})

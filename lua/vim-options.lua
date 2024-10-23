@@ -65,7 +65,7 @@ vim.opt.wrap = true
 vim.opt.textwidth = 80
 
 -- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", { desc = "save" })
+vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit" })
 -- Select all text in current buffer
 vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
