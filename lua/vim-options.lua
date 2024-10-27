@@ -67,18 +67,20 @@ vim.opt.textwidth = 80
 -- [[ basic keymaps ]]
 vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit" })
--- Select all text in current buffer
-vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
+vim.keymap.set("i", "jj", "<esc>", { desc = "escape" })
+vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>", { desc = "select all text in current buffer" })
+
 -- modify x and x to delete text without changing the internal registers
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "x", '"_d')
+vim.keymap.set({ "n", "x" }, "d", '"_x')
+vim.keymap.set({ "n", "x" }, "d", '"_d')
+
 --  see `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<c-h>", ":wincmd h<cr>", { desc = "move focus to the left window" })
 vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "move focus to the right window" })
 vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", { desc = "move focus to the lower window" })
 vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", { desc = "move focus to the upper window" })
-
-vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- highlight when yanking (copying) text
 --  try it with `yap` in normal mode
