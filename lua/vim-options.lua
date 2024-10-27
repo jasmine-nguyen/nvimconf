@@ -78,6 +78,8 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "move focus to the right 
 vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", { desc = "move focus to the lower window" })
 vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", { desc = "move focus to the upper window" })
 
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- highlight when yanking (copying) text
 --  try it with `yap` in normal mode
 --  see `:help vim.highlight.on_yank()`
