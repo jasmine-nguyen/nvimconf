@@ -65,10 +65,15 @@ vim.opt.wrap = true
 vim.opt.textwidth = 80
 
 -- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save" })
-vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit" })
-vim.keymap.set("i", "jj", "<esc>", { desc = "escape" })
-vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>", { desc = "select all text in current buffer" })
+vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
+vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
+vim.keymap.set("i", "jj", "<esc>", { desc = "escape", noremap = true })
+vim.keymap.set(
+	"n",
+	"<leader>a",
+	":keepjumps normal! ggVG<cr>",
+	{ desc = "select all text in current buffer", noremap = true }
+)
 
 -- modify x and x to delete text without changing the internal registers
 vim.keymap.set({ "n", "x" }, "x", '"_x')

@@ -17,6 +17,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[f]ormat current buffer", noremap = true })
 	end,
 }
