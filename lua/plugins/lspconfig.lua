@@ -37,7 +37,20 @@ return {
 			lspconfig.lwc_ls.setup({})
 
 			-- Go server setup
-			lspconfig.gopls.setup({})
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				settings = {
+					gopls = {
+						completeUnimported = true,
+						usePlaceholders = true,
+						analyses = {
+							unusedparams = true,
+						},
+					},
+				},
+			})
 
 			-- Golangci lint server setup
 			lspconfig.golangci_lint_ls.setup({})
