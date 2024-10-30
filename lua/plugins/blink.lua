@@ -12,6 +12,7 @@ return {
 				border = "single",
 			},
 			documentation = {
+				auto_show = true,
 				border = "single",
 			},
 		},
