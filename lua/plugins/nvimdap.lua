@@ -23,13 +23,13 @@ return {
 			dapui.close()
 		end
 
-		vim.keymap.set("n", "<leader>db", dap.set_breakpoint, { desc = "set [b]reakpoint", noremap = true })
-		vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "[c]ontinue", noremap = true })
-		vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "step [i]nto", noremap = true })
-		vim.keymap.set("n", "<leader>dl", dap.run_last, { desc = "run [l]ast", noremap = true })
-		vim.keymap.set("n", "<leader>do", dap.step_out, { desc = "step [o]ut", noremap = true })
-		vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, { desc = "[t]oggle breakpoint", noremap = true })
-		vim.keymap.set("n", "<leader>dv", dap.step_over, { desc = "step o[v]er", noremap = true })
+		vim.keymap.set("n", "<leader>db", dap.set_breakpoint, { desc = "set breakpoint", noremap = true })
+		vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "continue", noremap = true })
+		vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "step into", noremap = true })
+		vim.keymap.set("n", "<leader>dl", dap.run_last, { desc = "run last", noremap = true })
+		vim.keymap.set("n", "<leader>do", dap.step_out, { desc = "step out", noremap = true })
+		vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, { desc = "toggle breakpoint", noremap = true })
+		vim.keymap.set("n", "<leader>dv", dap.step_over, { desc = "step over", noremap = true })
 
 		-- Go DAP config
 		require("dap-go").setup()

@@ -100,35 +100,35 @@ return {
 
 			-- Jump to the definition of the word under your cursor.
 			-- To jump back, press <C-t>.
-			map("n", "gd", vim.lsp.buf.definition, "[g]oto [d]efinition")
+			map("n", "gd", vim.lsp.buf.definition, "goto definition")
 
 			-- WARN: This is not Goto Definition, this is Goto Declaration.
 			-- For example, in C this would take you to the header.
-			map("n", "gD", vim.lsp.buf.declaration, "[g]oto lsp [D]eclaration")
+			map("n", "gD", vim.lsp.buf.declaration, "goto lsp declaration")
 
 			-- Find references for the word under your cursor.
-			map("n", "gr", vim.lsp.buf.references, "[g]oto [r]eferences")
+			map("n", "gr", vim.lsp.buf.references, "goto references")
 
 			-- Jump to the implementation of the word under your cursor.
 			-- Useful when your language has ways of declaring types without an actual implementation.
-			map("n", "gi", vim.lsp.buf.implementation, "[g]oto [i]mplementation")
+			map("n", "gi", vim.lsp.buf.implementation, "goto implementation")
 
 			-- Jump to the type of the word under your cursor.
 			-- Useful when you're not sure what type a variable is and you want to see
 			-- the definition of its *type*, not where it was *defined*.
-			map("n", "gt", vim.lsp.buf.type_definition, "[g]oto [t]ype definition")
+			map("n", "gt", vim.lsp.buf.type_definition, "goto type definition")
 
 			-- Fuzzy find all the symbols in your current document.
 			-- Symbols are things like variables, functions, types, etc.
-			map("n", "<leader>ds", vim.lsp.buf.document_symbol, "[d]ocument [s]ymbol")
+			map("n", "<leader>ds", vim.lsp.buf.document_symbol, "document symbol")
 
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
-			map("n", "<leader>rn", vim.lsp.buf.rename, "[r]e[n]ame")
+			map("n", "<leader>rn", vim.lsp.buf.rename, "rename")
 
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
-			map("n", "<leader>ca", vim.lsp.buf.code_action, "[c]ode [a]ction")
+			map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
 		end,
 	},
 }
