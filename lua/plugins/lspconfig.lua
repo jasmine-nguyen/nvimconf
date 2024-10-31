@@ -23,23 +23,23 @@ return {
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
 				apex_jar_path = "$Home/lsp/apex-jorje-lsp.jar",
-				apex_enable_semantic_errors = true,   -- Whether to allow Apex Language Server to surface semantic errors
+				apex_enable_semantic_errors = true, -- Whether to allow Apex Language Server to surface semantic errors
 				apex_enable_completion_statistics = true, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 			})
 
 			-- JSON server setup
 			lspconfig.jsonls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 
 			-- Lua server setup
 			lspconfig.lua_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 
 			-- LWC server setup
 			lspconfig.lwc_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 
 			-- Go server setup
@@ -60,12 +60,12 @@ return {
 
 			-- Golangci lint server setup
 			lspconfig.golangci_lint_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 
 			-- Proto server setup
 			lspconfig.protols.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 
 			-- Typescript server setup
@@ -100,35 +100,35 @@ return {
 
 			-- Jump to the definition of the word under your cursor.
 			-- To jump back, press <C-t>.
-			map("n", "gd", vim.lsp.buf.definition, "goto definition")
+			map("n", "gd", vim.lsp.buf.definition, "[g]oto [d]efinition")
 
 			-- WARN: This is not Goto Definition, this is Goto Declaration.
 			-- For example, in C this would take you to the header.
-			map("n", "gD", vim.lsp.buf.declaration, "goto lsp declaration")
+			map("n", "gD", vim.lsp.buf.declaration, "[g]oto lsp [D]eclaration")
 
 			-- Find references for the word under your cursor.
-			map("n", "gr", vim.lsp.buf.references, "goto references")
+			map("n", "gr", vim.lsp.buf.references, "[g]oto [r]eferences")
 
 			-- Jump to the implementation of the word under your cursor.
 			-- Useful when your language has ways of declaring types without an actual implementation.
-			map("n", "gi", vim.lsp.buf.implementation, "goto implementation")
+			map("n", "gi", vim.lsp.buf.implementation, "[g]oto [i]mplementation")
 
 			-- Jump to the type of the word under your cursor.
 			-- Useful when you're not sure what type a variable is and you want to see
 			-- the definition of its *type*, not where it was *defined*.
-			map("n", "gt", vim.lsp.buf.type_definition, "goto type definition")
+			map("n", "gt", vim.lsp.buf.type_definition, "[g]oto [t]ype definition")
 
 			-- Fuzzy find all the symbols in your current document.
 			-- Symbols are things like variables, functions, types, etc.
-			map("n", "<leader>ds", vim.lsp.buf.document_symbol, "document symbol")
+			map("n", "<leader>ds", vim.lsp.buf.document_symbol, "[d]ocument [s]ymbol")
 
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
-			map("n", "<leader>rn", vim.lsp.buf.rename, "rename variable under cursor")
+			map("n", "<leader>rn", vim.lsp.buf.rename, "[r]e[n]ame")
 
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
-			map("n", "<leader>ca", vim.lsp.buf.code_action, "code action")
+			map("n", "<leader>ca", vim.lsp.buf.code_action, "[c]ode [a]ction")
 		end,
 	},
 }

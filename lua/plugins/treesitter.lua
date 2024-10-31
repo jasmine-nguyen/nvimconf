@@ -12,7 +12,6 @@ return {
 			"gomod",
 			"gosum",
 			"proto",
-			"terraform",
 			"typescript",
 		},
 		auto_install = true,

@@ -12,11 +12,10 @@ return {
 				border = "single",
 			},
 			documentation = {
-				auto_show = true,
 				border = "single",
 			},
 		},
 		accept = { auto_brackets = { enabled = true } },
-		trigger = { signature_help = { enabled = true } },
+		-- trigger = { signature_help = { enabled = true } },
 	},
 }
