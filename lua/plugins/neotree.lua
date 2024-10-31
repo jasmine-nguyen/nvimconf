@@ -8,7 +8,7 @@ return {
 		"BurntSushi/ripgrep",
 	},
 	keys = {
-		{ "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
+		{ "\\", ":Neotree reveal<CR>", desc = "neotree reveal", silent = true },
 	},
 	opts = {
 		filesystem = {
