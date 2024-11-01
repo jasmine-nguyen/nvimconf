@@ -2,7 +2,9 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup()
+			require("mason").setup({
+				ensure_installed = {"eslint_d", "golangci-lint", "protolint"}
+			})
 		end,
 	},
 	{
@@ -47,15 +49,6 @@ return {
 				capabilities = capabilities,
 				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-				settings = {
-					gopls = {
-						completeUnimported = true,
-						usePlaceholders = true,
-						analyses = {
-							unusedparams = true,
-						},
-					},
-				},
 			})
 
 			-- Golangci lint server setup
