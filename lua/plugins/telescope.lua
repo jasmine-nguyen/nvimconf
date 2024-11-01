@@ -3,6 +3,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
+		event = "VeryLazy",
 		cmd = { "Telescope" },
 		config = function()
 			local builtin = require("telescope.builtin")
