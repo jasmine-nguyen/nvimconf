@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	version = "*",
 	opts = {
+		autochdir = true,
 		size = 20,
 		open_mapping = "<leader>tt",
 		start_in_insert = true,
