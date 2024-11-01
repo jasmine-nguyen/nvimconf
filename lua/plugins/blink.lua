@@ -18,6 +18,11 @@ return {
 				border = "single",
 			},
 		},
-		-- trigger = { signature_help = { enabled = true } },
+		trigger = {
+			completion = {
+				show_in_snippet = false,
+			},
+			signature_help = { enabled = true },
+		},
 	},
 }
