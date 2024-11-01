@@ -10,7 +10,9 @@ return {
 			sources = {
 				require("none-ls.diagnostics.eslint_d"),
 				null_ls.builtins.diagnostics.protolint,
-				null_ls.builtins.diagnostics.golangci_lint,
+				null_ls.builtins.diagnostics.golangci_lint.with({
+					args = {"--allow-parallel-runners"}
+				}),
 				null_ls.builtins.formatting.buf,
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.prettierd,
