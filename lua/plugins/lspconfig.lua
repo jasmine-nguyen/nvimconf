@@ -2,9 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		config = function()
-			require("mason").setup({
-				ensure_installed = {"eslint_d", "golangci-lint", "protolint"}
-			})
+			require("mason").setup()
 		end,
 	},
 	{
