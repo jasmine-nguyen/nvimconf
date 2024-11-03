@@ -38,7 +38,6 @@ return {
 					dap = true,
 					flash = true,
 					lazy = true,
-					mini_highpatterns = true,
 					mini_indentscope = true,
 					mini_surround = true,
 					mini_trailspace = true,
