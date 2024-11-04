@@ -13,7 +13,7 @@ return {
 			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "search files", noremap = true })
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "search current word", noremap = true })
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "search by grep", noremap = true })
-			vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = "search old files)", noremap = true })
+			vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = "search old files", noremap = true })
 		end,
 	},
 	{
