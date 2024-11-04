@@ -11,9 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("autocmds")
+require("options") -- Options has to be loaded first so that keymaps using <leader> in keymaps.lua can be found
 require("keymaps")
-require("options")
+require("autocmds")
 require("lazy").setup("plugins", {
 	checker = {
 		enabled = true,
