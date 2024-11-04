@@ -1,6 +1,6 @@
 -- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
+vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
 vim.keymap.set("i", "jj", "<esc>", { desc = "escape", noremap = true })
 vim.keymap.set(
 	"n",
@@ -21,3 +21,4 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "move focus to the right 
 vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", { desc = "move focus to the lower window" })
 vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", { desc = "move focus to the upper window" })
 
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "format current buffer", noremap = true })
