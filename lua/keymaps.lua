@@ -1,6 +1,6 @@
 -- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
-vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
+vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit buffer", noremap = true })
+vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save buffer", noremap = true })
 vim.keymap.set("i", "jj", "<esc>", { desc = "escape", noremap = true })
 vim.keymap.set(
 	"n",
