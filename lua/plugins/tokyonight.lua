@@ -13,6 +13,8 @@ return {
 			local fg_gutter = "#627E97"
 			local border = "#547998"
 			local blue1 = "#7eb8da"
+			local error = "#d7677d"
+			local red1 = "d7677d"
 
 			require("tokyonight").setup({
 				style = "night",
@@ -33,6 +35,8 @@ return {
 					colors.fg_float = fg
 					colors.fg_gutter = fg_gutter
 					colors.fg_sidebar = fg_dark
+					colors.error = error
+					colors.red1 = red1
 				end,
 				plugins = {
 					alpha = true,
