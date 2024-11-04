@@ -11,7 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("vimoptions")
+require("autocmds")
+require("keymaps")
+require("options")
 require("lazy").setup("plugins", {
 	checker = {
 		enabled = true,
