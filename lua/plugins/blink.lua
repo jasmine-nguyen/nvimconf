@@ -7,7 +7,7 @@ return {
 		highlight = {
 			use_nvim_cmp_as_default = true,
 		},
-		keymap = "super-tab",
+		keymap = { preset = "enter" },
 		nerd_font_variant = "mono",
 		windows = {
 			autocomplete = {
