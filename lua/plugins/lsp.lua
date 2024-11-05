@@ -15,6 +15,8 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
