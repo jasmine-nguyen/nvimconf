@@ -3,18 +3,18 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		bigfile = { enable = true },
-		bufdelete = { enable = false },
-		debug = { enable = false },
-		git = { enable = false },
-		gitbrowse = { enable = false },
-		lazygit = { enable = true },
-		notify = { enable = false },
-		notifier = { enable = false },
-		quickfile = { enable = true },
-		rename = { enable = false },
+		bigfile = { enabled = true },
+		bufdelete = { enabled = false },
+		debug = { enabled = false },
+		git = { enabled = false },
+		gitbrowse = { enabled = false },
+		lazygit = { enabled = true },
+		notify = { enabled = false },
+		notifier = { enabled = false },
+		quickfile = { enabled = true },
+		rename = { enabled = false },
 		statuscolumn = {
-			enable = true,
+			enabled = true,
 			left = { "mark", "sign" }, -- priority of signs on the left (high to low)
 			right = { "fold", "git" }, -- priority of signs on the right (high to low)
 			folds = {
@@ -27,10 +27,10 @@ return {
 			},
 		},
 		refresh = 50, -- refresh at most every 50ms },
-		terminal = { enable = false },
-		toggle = { enable = false },
-		win = { enable = false },
-		words = { enable = false },
+		terminal = { enabled = false },
+		toggle = { enabled = false },
+		win = { enabled = false },
+		words = { enabled = false },
 		styles = {
 			notification = {
 				wo = { wrap = true }, -- Wrap notifications
