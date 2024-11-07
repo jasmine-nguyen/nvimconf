@@ -12,9 +12,8 @@ return {
 			local fg_dark = "#B4D0E9"
 			local fg_gutter = "#627E97"
 			local border = "#547998"
-			local blue1 = "#7eb8da"
 			local error = "#d7677d"
-			local red1 = "d7677d"
+			local red1 = "#d7677d"
 
 			require("tokyonight").setup({
 				style = "night",
@@ -29,7 +28,6 @@ return {
 					colors.bg_statusline = bg_dark
 					colors.bg_visual = bg_visual
 					colors.border = border
-					colors.blue1 = blue1
 					colors.fg = fg
 					colors.fg_dark = fg_dark
 					colors.fg_float = fg
