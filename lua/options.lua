@@ -64,29 +64,17 @@ vim.opt.wrap = true
 -- maximum width of text that is being inserted.  a longer line will be broken after white space to get this width.
 vim.opt.textwidth = 80
 
--- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", { desc = "save" })
-vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit" })
--- Select all text in current buffer
-vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>")
--- modify x and x to delete text without changing the internal registers
-vim.keymap.set({ "n", "x" }, "x", '"_x')
-vim.keymap.set({ "n", "x" }, "x", '"_d')
---  see `:help wincmd` for a list of all window commands
-vim.keymap.set("n", "<c-h>", ":wincmd h<cr>", { desc = "move focus to the left window" })
-vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "move focus to the right window" })
-vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", { desc = "move focus to the lower window" })
-vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", { desc = "move focus to the upper window" })
-
--- highlight when yanking (copying) text
---  try it with `yap` in normal mode
---  see `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd("textyankpost", {
-	desc = "highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+-- Apex filetypes
+vim.filetype = on
+vim.filetype.add({
+	extension = {
+		cls = "apex",
+		apex = "apex",
+		trigger = "apex",
+		soql = "soql",
+		sosl = "sosl",
+		log = "sflog",
+	},
 })
 
 -- sync clipboard between os and neovim.
