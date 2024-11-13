@@ -33,15 +33,6 @@ return {
 		"neovim/nvim-lspconfig",
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		event = { "BufReadPost", "BufNewFile" },
-		opts = {
-			diagnostics = {
-				virtual_text = false,
-				virtual_lines = {
-					only_current_line = true,
-					highlight_whole_line = false,
-				},
-			},
-		},
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
