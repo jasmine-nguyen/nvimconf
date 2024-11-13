@@ -1,7 +1,8 @@
 return {
 	"folke/todo-comments.nvim",
-	cmd = { "TodoTrouble", "TodoTelescope" },
+	cmd = { "TodoTelescope" },
 	event = "VeryLazy",
+	opts = {},
 	keys = {
 		{
 			"]t",
