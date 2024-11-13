@@ -34,7 +34,13 @@ return {
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
-			virtual_text = false,
+			diagnostics = {
+				virtual_text = false,
+				virtual_lines = {
+					only_current_line = true,
+					highlight_whole_line = false,
+				},
+			},
 		},
 		config = function()
 			local lspconfig = require("lspconfig")
