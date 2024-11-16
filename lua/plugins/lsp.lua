@@ -132,6 +132,9 @@ return {
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
 			map("n", "<leader>ca", vim.lsp.buf.code_action, "execute code action")
+
+			-- Show line diagnostic in a floating window, useful when error is too long
+			map("n", "<leader>of", vim.diagnostic.open_float, "show line diagnostics in a floating window")
 		end,
 	},
 }
