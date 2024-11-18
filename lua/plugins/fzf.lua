@@ -5,7 +5,6 @@ return {
 	config = function()
 		local fzflua = require("fzf-lua")
 		local fzftodo = require("todo-comments.fzf")
-		-- calling `setup` is optional for customization
 		fzflua.setup({
 			-- key mappings
 			vim.keymap.set("n", "fc", fzflua.command_history, { desc = "find command history", noremap = true }),
