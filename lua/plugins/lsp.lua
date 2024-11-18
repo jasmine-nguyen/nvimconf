@@ -109,6 +109,9 @@ return {
 			-- For example, in C this would take you to the header.
 			map("n", "gD", vim.lsp.buf.declaration, "go to declaration")
 
+			-- Format current buffer
+			map("n", "<leader>f", vim.lsp.buf.format, "format current buffer")
+
 			-- Find references for the word under your cursor.
 			map("n", "gr", vim.lsp.buf.references, "find references")
 

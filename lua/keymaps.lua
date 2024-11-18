@@ -21,5 +21,3 @@ vim.keymap.set("n", "<c-h>", ":wincmd h<cr>", { desc = "move focus to the left w
 vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "move focus to the right window" })
 vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", { desc = "move focus to the lower window" })
 vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", { desc = "move focus to the upper window" })
-
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "format current buffer", noremap = true })
