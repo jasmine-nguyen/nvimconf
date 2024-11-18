@@ -10,7 +10,7 @@ return {
 			},
 		},
 		size = 20,
-		open_mapping = [[ff]],
+		open_mapping = [[vv]],
 		start_in_insert = true,
 		insert_mappings = false, -- whether or not the open mapping applies in insert mode
 		terminal_mappings = true,
