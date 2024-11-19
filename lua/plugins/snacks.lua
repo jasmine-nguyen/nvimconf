@@ -7,7 +7,7 @@ return {
 	},
 	keys = {
 		{
-			"lz",
+			"<leader>gg",
 			function()
 				Snacks.lazygit()
 			end,
