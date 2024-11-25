@@ -25,11 +25,12 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "saghen/blink.cmp" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 			-- Apex server setup
