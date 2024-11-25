@@ -7,7 +7,7 @@ return {
 			},
 		},
 		event = { "LspAttach", "InsertCharPre" },
-		version = "v0.*",
+		version = "v0.5.1",
 		opts = {
 			accept = { auto_brackets = { enabled = true } },
 			highlight = {
