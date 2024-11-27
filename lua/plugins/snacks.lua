@@ -6,6 +6,12 @@ return {
 		dashboard = {
 			enabled = true,
 			autokeys = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+			preset = {
+				header = [[
+Never trust an atom.
+They make up everything.
+]],
+			},
 			sections = {
 				{ section = "header" },
 				{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
