@@ -2,6 +2,7 @@ return {
 	"nvimtools/none-ls.nvim",
 	event = "VeryLazy",
 	dependencies = {
+		"nvim-lua/plenary.nvim",
 		"nvimtools/none-ls-extras.nvim",
 	},
 	config = function()

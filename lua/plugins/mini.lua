@@ -4,7 +4,7 @@ return {
 	config = function()
 		local ai = require("mini.ai")
 		-- MiniAi setup
-		require("mini.ai").setup({
+		ai.setup({
 			n_lines = 500,
 			custom_textobjects = {
 				o = ai.gen_spec.treesitter({ -- code block
@@ -22,6 +22,18 @@ return {
 				u = ai.gen_spec.function_call(), -- u for "Usage"
 				U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
 			},
+		})
+
+		-- MiniFiles setup
+		local minifiles = require("mini.files")
+		minifiles.setup({
+			vim.keymap.set("n", "\\", function()
+				minifiles.open(nil, false)
+			end, { desc = "open minifiles", noremap = true }),
+
+			vim.keymap.set("n", "<esc>", function()
+				minifiles.close()
+			end, { desc = "close minifiles", noremap = true }),
 		})
 
 		-- MiniIndentscope setup
