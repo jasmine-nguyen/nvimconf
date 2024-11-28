@@ -1,7 +1,10 @@
 return {
 	"ibhagwan/fzf-lua",
 	-- optional for icon support
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"BurntSushi/ripgrep",
+		"nvim-tree/nvim-web-devicons",
+	},
 	config = function()
 		local fzflua = require("fzf-lua")
 		local fzftodo = require("todo-comments.fzf")
@@ -13,12 +16,12 @@ return {
 				fzflua.command_history,
 				{ desc = "find command history", noremap = true }
 			),
-			vim.keymap.set("n", "<leader>fb", fzflua.buffers, { desc = "find buffers", noremap = true }),
-			vim.keymap.set("n", "<leader>ff", fzflua.files, { desc = "find files", noremap = true }),
-			vim.keymap.set("n", "<leader>fk", fzflua.keymaps, { desc = "find key mappings", noremap = true }),
-			vim.keymap.set("n", "<leader>fg", fzflua.live_grep, { desc = "find by grep", noremap = true }),
-			vim.keymap.set("n", "<leader>fo", fzflua.oldfiles, { desc = "find old files", noremap = true }),
-			vim.keymap.set("n", "<leader>ft", fzftodo.todo, { desc = "find todos", noremap = true }),
+			vim.keymap.set("n", "fb", fzflua.buffers, { desc = "find buffers", noremap = true }),
+			vim.keymap.set("n", "ff", fzflua.files, { desc = "find files", noremap = true }),
+			vim.keymap.set("n", "fk", fzflua.keymaps, { desc = "find key mappings", noremap = true }),
+			vim.keymap.set("n", "fg", fzflua.live_grep, { desc = "find by grep", noremap = true }),
+			vim.keymap.set("n", "fo", fzflua.oldfiles, { desc = "find old files", noremap = true }),
+			vim.keymap.set("n", "ft", fzftodo.todo, { desc = "find todos", noremap = true }),
 		})
 	end,
 }
