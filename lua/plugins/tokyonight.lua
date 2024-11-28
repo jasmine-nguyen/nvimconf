@@ -10,6 +10,19 @@ return {
 				styles = {
 					floats = "transparent",
 				},
+				plugins = {
+					blink = true,
+					dap = true,
+					flash = true,
+					fzf = true,
+					lazy = true,
+					mini_files = true,
+					mini_indentscope = true,
+					mini_surround = true,
+					mini_trailspace = true,
+					["neotree"] = true,
+					["which-key"] = true,
+				},
 			})
 			-- load the colorscheme here
 			vim.cmd([[colorscheme tokyonight]])
