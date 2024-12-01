@@ -68,7 +68,7 @@ return {
 						local escaped_path = vim.fn.fnameescape(path)
 						-- Build the osascript command to copy the file or directory to the clipboard
 						local cmd =
-							string.format([[osascript -e 'set the clipboard to POSIX file "%s"' ]], escaped_path)
+								string.format([[osascript -e 'set the clipboard to POSIX file "%s"' ]], escaped_path)
 						local result = vim.fn.system(cmd)
 						if vim.v.shell_error ~= 0 then
 							vim.notify("Copy failed: " .. result, vim.log.levels.ERROR)
@@ -85,9 +85,9 @@ return {
 					local curr_entry = require("mini.files").get_fs_entry()
 					if curr_entry then
 						local path = curr_entry.path
-						local name = vim.fn.fnamemodify(path, ":t") -- Extract the file or directory name
-						local parent_dir = vim.fn.fnamemodify(path, ":h") -- Get the parent directory
-						local timestamp = os.date("%y%m%d%H%M%S") -- Append timestamp to avoid duplicates
+						local name = vim.fn.fnamemodify(path, ":t")                 -- Extract the file or directory name
+						local parent_dir = vim.fn.fnamemodify(path, ":h")           -- Get the parent directory
+						local timestamp = os.date("%y%m%d%H%M%S")                   -- Append timestamp to avoid duplicates
 						local zip_path = string.format("/tmp/%s_%s.zip", name, timestamp) -- Path in macOS's tmp directory
 						-- Create the zip file
 						local zip_cmd = string.format(
@@ -132,7 +132,7 @@ return {
 						return
 					end
 					local curr_dir = curr_entry.fs_type == "directory" and curr_entry.path
-						or vim.fn.fnamemodify(curr_entry.path, ":h") -- Use parent directory if entry is a file
+							or vim.fn.fnamemodify(curr_entry.path, ":h") -- Use parent directory if entry is a file
 					vim.notify("Current directory: " .. curr_dir, vim.log.levels.INFO)
 					local script = [[
             tell application "System Events"
@@ -155,9 +155,11 @@ return {
 						vim.notify("Clipboard is empty or invalid.", vim.log.levels.WARN)
 						return
 					end
-					local dest_path = curr_dir .. "/" .. vim.fn.fnamemodify(source_path, ":t") -- Destination path in current directory
+					local dest_path = curr_dir ..
+							"/" ..
+							vim.fn.fnamemodify(source_path, ":t") -- Destination path in current directory
 					local copy_cmd = vim.fn.isdirectory(source_path) == 1 and { "cp", "-R", source_path, dest_path }
-						or { "cp", source_path, dest_path } -- Construct copy command
+							or { "cp", source_path, dest_path } -- Construct copy command
 					local result = vim.fn.system(copy_cmd) -- Execute the copy command
 					if vim.v.shell_error ~= 0 then
 						vim.notify("Paste operation failed: " .. result, vim.log.levels.ERROR)
@@ -194,8 +196,8 @@ return {
 
 				-- map_split(buf_id, "<leader>h", "horizontal", false)
 				-- map_split(buf_id, "<leader>v", "vertical", false)
-				map_split(buf_id, "H", "horizontal", true)
-				map_split(buf_id, "V", "vertical", true)
+				map_split(buf_id, "S", "vertical", true)
+				map_split(buf_id, "D", "horizontal", true)
 			end,
 		})
 	end,
