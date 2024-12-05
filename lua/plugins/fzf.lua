@@ -19,7 +19,9 @@ return {
 			vim.keymap.set("n", "fb", fzflua.buffers, { desc = "find buffers", noremap = true }),
 			vim.keymap.set("n", "ff", fzflua.files, { desc = "find files", noremap = true }),
 			vim.keymap.set("n", "fk", fzflua.keymaps, { desc = "find key mappings", noremap = true }),
-			vim.keymap.set("n", "fg", fzflua.live_grep, { desc = "find by grep", noremap = true }),
+			vim.keymap.set("n", "fl", fzflua.loclist, { desc = "find loclist", noremap = true }),
+			vim.keymap.set("n", "fg", fzflua.grep_curbuf, { desc = "grep current buffer", noremap = true }),
+			vim.keymap.set("n", "fp", fzflua.live_grep_native, { desc = "live grep current project", noremap = true }),
 			vim.keymap.set("n", "fo", fzflua.oldfiles, { desc = "find old files", noremap = true }),
 			vim.keymap.set("n", "ft", fzftodo.todo, { desc = "find todos", noremap = true }),
 		})
