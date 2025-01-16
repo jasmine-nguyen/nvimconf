@@ -5,20 +5,18 @@ return {
 	opts = {},
 	keys = {
 		{
-			"]t",
+			"<leader>st",
 			function()
-				require("todo-comments").jump_next()
+				Snacks.picker.todo_comments()
 			end,
-			desc = "Next Todo Comment",
+			desc = "Todo",
 		},
 		{
-			"[t",
+			"<leader>sT",
 			function()
-				require("todo-comments").jump_prev()
+				Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
 			end,
-			desc = "Previous Todo Comment",
+			desc = "Todo/Fix/Fixme",
 		},
-		{ "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
-		{ "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
 	},
 }
