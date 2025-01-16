@@ -12,6 +12,7 @@ return {
 			"gomod",
 			"gosum",
 			"proto",
+			"regex",
 			"terraform",
 			"typescript",
 		},
