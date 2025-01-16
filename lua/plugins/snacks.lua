@@ -21,6 +21,7 @@ They make up everything.
 			},
 		},
 		lazygit = { enabled = true },
+		picker = { enabled = true },
 	},
 	keys = {
 		{
@@ -29,6 +30,34 @@ They make up everything.
 				Snacks.lazygit()
 			end,
 			desc = "open lazygit",
+		},
+		{
+			"<leader>sf",
+			function()
+				Snacks.picker.files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			"<leader>sg",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Grep",
+		},
+		{
+			"<leader>sB",
+			function()
+				Snacks.picker.grep_buffers()
+			end,
+			desc = "Grep Open Buffers",
+		},
+		{
+			"<leader>ss",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP Symbols",
 		},
 	},
 }
