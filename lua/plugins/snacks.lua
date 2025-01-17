@@ -21,7 +21,7 @@ They make up everything.
 			},
 		},
 		lazygit = { enabled = true },
-		picker = { enabled = true },
+		picker = { enabled = true, git_files = { untracked = true, submodule = true } },
 	},
 	keys = {
 		{
@@ -44,6 +44,13 @@ They make up everything.
 				Snacks.picker.grep()
 			end,
 			desc = "Grep",
+		},
+		{
+			"<leader>sG",
+			function()
+				Snacks.picker.git_files()
+			end,
+			desc = "Find Git Files",
 		},
 		{
 			"<leader>sB",
