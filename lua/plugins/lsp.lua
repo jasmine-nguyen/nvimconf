@@ -3,14 +3,6 @@ return {
 		"williamboman/mason.nvim",
 		cmd = "Mason",
 		build = ":MasonUpdate",
-		opts_extend = { "ensure_installed" },
-		opts = {
-			ensure_installed = {
-				"eslint_d",
-				"protolint",
-				"golangci-lint",
-			},
-		},
 		config = function()
 			require("mason").setup()
 		end,
@@ -36,7 +28,7 @@ return {
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
 				apex_jar_path = "$Home/lsp/apex-jorje-lsp.jar",
-				apex_enable_semantic_errors = true, -- Whether to allow Apex Language Server to surface semantic errors
+				apex_enable_semantic_errors = true,   -- Whether to allow Apex Language Server to surface semantic errors
 				apex_enable_completion_statistics = true, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 			})
 
