@@ -21,6 +21,7 @@ return {
 					mini_surround = true,
 					mini_trailspace = true,
 					["neotree"] = true,
+					snacks = true,
 					["which-key"] = true,
 				},
 			})
