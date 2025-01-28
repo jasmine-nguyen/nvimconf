@@ -4,14 +4,14 @@ return {
 	config = function()
 		require("mini.move").setup({
 			mappings = {
-				left = "<S-h>",
-				right = "<S-l>",
-				down = "<S-j>",
-				up = "<S-k>",
-				line_left = "<S-h>",
-				line_right = "<S-l>",
-				line_down = "<S-j>",
-				line_up = "<S-k>",
+				left = "<S-left>",
+				down = "<S-down>",
+				up = "<S-right>",
+				right = "<S-right>",
+				line_left = "<S-left>",
+				line_down = "<S-down>",
+				line_up = "<S-up>",
+				line_right = "<S-right>",
 			},
 		})
 	end,
