@@ -6,7 +6,7 @@ return {
 			mappings = {
 				left = "<S-left>",
 				down = "<S-down>",
-				up = "<S-right>",
+				up = "<S-up>",
 				right = "<S-right>",
 				line_left = "<S-left>",
 				line_down = "<S-down>",
