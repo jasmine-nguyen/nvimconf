@@ -23,7 +23,7 @@
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
   "smear-cursor.nvim": { "branch": "main", "commit": "3bbf014d246867a2b9e52086ba0adc2f3a8786b2" },
-  "snacks.nvim": { "branch": "main", "commit": "e3cd6999314b554ae3d080de1a54a1a1e3979ae7" },
+  "snacks.nvim": { "branch": "main", "commit": "4db1fc6da608bfa39e0e0e4a05c06a52b578891e" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "tokyonight.nvim": { "branch": "main", "commit": "dca4adba7dc5f09302a00b0e76078d54d82d2658" },
   "which-key.nvim": { "branch": "main", "commit": "0e76a87ac51772569aec678dc74baa8e2a86100c" }
