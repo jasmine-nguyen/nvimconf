@@ -6,7 +6,6 @@ return {
 		opts = {
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
-				signature = { enabled = true },
 			},
 			keymap = { preset = "super-tab" },
 		},
