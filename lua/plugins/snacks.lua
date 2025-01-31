@@ -48,9 +48,9 @@ They make up everything.
 		{
 			"<leader>sG",
 			function()
-				Snacks.picker.git_files()
+				Snacks.picker.grep_word()
 			end,
-			desc = "Find Git Files",
+			desc = "Grep word",
 		},
 		{
 			"<leader>sB",
