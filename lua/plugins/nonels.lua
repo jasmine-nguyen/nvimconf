@@ -18,7 +18,7 @@ return {
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			local masonnullls = require("mason-null-ls")
 			masonnullls.setup({
-				ensure_installed = { "eslint_d", "prettierd", "protolint", "stylua" },
+				ensure_installed = { "eslint_d", "prettierd", "protolint", "stylua", "yamlfmt", "yamllint" },
 			})
 			local null_ls = require("null-ls")
 			null_ls.setup({
@@ -28,10 +28,12 @@ return {
 					null_ls.builtins.diagnostics.golangci_lint.with({
 						args = { "--allow-parallel-runners" },
 					}),
+					null_ls.builtins.diagnostics.yamllint,
 					null_ls.builtins.formatting.buf,
 					null_ls.builtins.formatting.gofmt,
 					null_ls.builtins.formatting.prettierd,
 					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.yamlfmt,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
