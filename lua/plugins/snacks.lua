@@ -20,11 +20,17 @@ They make up everything.
 				{ section = "startup" },
 			},
 		},
-		explorer = { enabled = true, auto_close = true, focus = "input", jump = { close = false } },
+		explorer = { enabled = true, jump = { close = false } },
 		lazygit = { enabled = true },
 		picker = {
 			enabled = true,
 			git_files = { untracked = true, submodule = true },
+			sources = {
+				explorer = {
+					focus = "input",
+					auto_close = true,
+				},
+			},
 		},
 	},
 	keys = {
