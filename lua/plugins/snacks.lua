@@ -20,8 +20,12 @@ They make up everything.
 				{ section = "startup" },
 			},
 		},
+		explorer = { enabled = true, auto_close = true, focus = "input", jump = { close = false } },
 		lazygit = { enabled = true },
-		picker = { enabled = true, git_files = { untracked = true, submodule = true } },
+		picker = {
+			enabled = true,
+			git_files = { untracked = true, submodule = true },
+		},
 	},
 	keys = {
 		{
@@ -65,6 +69,13 @@ They make up everything.
 				Snacks.picker.lsp_symbols()
 			end,
 			desc = "LSP Symbols",
+		},
+		{
+			"\\",
+			function()
+				Snacks.picker.explorer()
+			end,
+			desc = "Toggle snacks explorer",
 		},
 	},
 }

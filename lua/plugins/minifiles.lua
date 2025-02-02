@@ -1,10 +1,12 @@
 return {
 	{
 		"echasnovski/mini.icons",
+		enabled = false,
 		opts = {},
 	},
 	{
 		"echasnovski/mini.files",
+		enabled = false,
 		opts = function(_, opts)
 			-- Override some default mappings
 			opts.mappings = vim.tbl_deep_extend("force", opts.mappings or {}, {
