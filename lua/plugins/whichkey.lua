@@ -1,7 +1,7 @@
 return {
 	{
 		"echasnovski/mini.icons",
-		enabled = false,
+		enabled = true,
 		opts = {},
 	},
 	{
