@@ -21,6 +21,7 @@ They make up everything.
 			},
 		},
 		explorer = { enabled = true },
+		indent = { enabled = true },
 		lazygit = { enabled = true },
 		picker = {
 			enabled = true,
