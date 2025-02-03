@@ -14,7 +14,7 @@ return {
 			if not winid then
 				vim.lsp.buf.hover()
 			end
-		end, { desc = "Peek Fold" })
+		end, { desc = "peek fold" })
 
 		require("ufo").setup({
 			provider_selector = function()
