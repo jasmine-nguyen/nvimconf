@@ -15,6 +15,8 @@ return {
 			"regex",
 			"terraform",
 			"typescript",
+			"sql",
+			"yaml",
 		},
 		auto_install = true,
 		highlight = {
