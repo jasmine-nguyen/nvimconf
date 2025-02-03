@@ -46,43 +46,56 @@ They make up everything.
 			function()
 				Snacks.picker.files()
 			end,
-			desc = "Find Files",
+			desc = "find files",
 		},
 		{
 			"<leader>sg",
 			function()
 				Snacks.picker.grep()
 			end,
-			desc = "Grep",
+			desc = "grep",
 		},
 		{
 			"<leader>sG",
 			function()
 				Snacks.picker.grep_word()
 			end,
-			desc = "Grep word",
+			desc = "grep word",
 		},
 		{
 			"<leader>sB",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
-			desc = "Grep Open Buffers",
+			desc = "grep open buffers",
 		},
 		{
 			"<leader>ss",
 			function()
 				Snacks.picker.lsp_symbols()
 			end,
-			desc = "LSP Symbols",
+			desc = "lsp symbols",
 		},
 		{
 			"\\",
 			function()
 				Snacks.picker.explorer()
 			end,
-			desc = "Toggle snacks explorer",
 			desc = "toggle snacks explorer",
+		},
+		{
+			"<leader>st",
+			function()
+				Snacks.picker.todo_comments()
+			end,
+			desc = "search Todo",
+		},
+		{
+			"<leader>sT",
+			function()
+				Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+			end,
+			desc = "search Todo/Fix/Fixme",
 		},
 	},
 }
