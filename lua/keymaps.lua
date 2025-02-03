@@ -22,9 +22,12 @@ vim.keymap.set("n", "<C-q>", "Q", { noremap = true, desc = "replay last register
 -- modify x and x to delete text without changing the internal registers
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "x", '"_d')
+-- vim.keymap.set({ "n", "x" }, "d", '"_x')
+-- vim.keymap.set({ "n", "x" }, "d", '"_d')
+
 -- use gh to move to the beginning of the line in normal mode
--- use gl to move to the end of the line in normal mode
 vim.keymap.set({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
+-- use gl to move to the end of the line in normal mode
 vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
 -- move lines up and down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down in visual mode" })
@@ -45,8 +48,6 @@ vim.keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r>=tolower(expand('<cword>'))<CR>/gI<Left><Left><Left>]],
 	{ desc = "[P]GLOBALLY replace word I'm on with lowercase" }
 )
--- vim.keymap.set({ "n", "x" }, "d", '"_x')
--- vim.keymap.set({ "n", "x" }, "d", '"_d')
 
 --  see `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { desc = "move focus to the left window" })
