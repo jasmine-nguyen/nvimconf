@@ -82,6 +82,7 @@ They make up everything.
 				Snacks.picker.explorer()
 			end,
 			desc = "Toggle snacks explorer",
+			desc = "toggle snacks explorer",
 		},
 	},
 }
