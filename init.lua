@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options") -- Options has to be loaded first so that keymaps using <leader> in keymaps.lua can be found
 require("keymaps")
-require("autocmds")
 require("lazy").setup("plugins", {
 	concurrency = 4,
 	checker = {
