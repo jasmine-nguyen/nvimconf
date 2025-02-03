@@ -1,5 +1,6 @@
 return {
 	"echasnovski/mini.move",
+	enabled = false,
 	event = "VeryLazy",
 	config = function()
 		require("mini.move").setup({
