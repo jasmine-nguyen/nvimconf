@@ -123,21 +123,9 @@ return {
 			-- Format current buffer
 			map("n", "<leader>f", vim.lsp.buf.format, "format current buffer")
 
-			-- Find references for the word under your cursor.
-			map("n", "gr", vim.lsp.buf.references, "find references")
-
 			-- Jump to the implementation of the word under your cursor.
 			-- Useful when your language has ways of declaring types without an actual implementation.
 			map("n", "gi", vim.lsp.buf.implementation, "jump to implementation")
-
-			-- Jump to the type of the word under your cursor.
-			-- Useful when you're not sure what type a variable is and you want to see
-			-- the definition of its *type*, not where it was *defined*.
-			map("n", "gt", vim.lsp.buf.type_definition, "jump to type definition")
-
-			-- Fuzzy find all the symbols in your current document.
-			-- Symbols are things like variables, functions, types, etc.
-			map("n", "<leader>ds", vim.lsp.buf.document_symbol, "find document symbol")
 
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
