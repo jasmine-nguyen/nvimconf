@@ -25,7 +25,14 @@ They make up everything.
 		lazygit = { enabled = true },
 		picker = {
 			enabled = true,
+			jump = {
+				tagstack = true,
+				reuse_win = true,
+			},
 			git_files = { untracked = true, submodule = true },
+			matcher = {
+				frecency = true,
+			},
 			sources = {
 				explorer = {
 					auto_close = true,
