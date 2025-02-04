@@ -86,5 +86,3 @@ vim.schedule(function()
 	vim.diagnostic.config({ virtual_text = false })
 end)
 
--- virtual lines
-vim.diagnostic.config({ virtual_lines = true })
