@@ -85,3 +85,6 @@ vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 	vim.diagnostic.config({ virtual_text = false })
 end)
+
+-- virtual lines
+vim.diagnostic.config({ virtual_lines = true })
