@@ -29,6 +29,12 @@ return {
 		dependencies = { "saghen/blink.cmp" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			diagnostics = {
+				virtual_text = false,
+				virtual_lines = true,
+			},
+		},
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
