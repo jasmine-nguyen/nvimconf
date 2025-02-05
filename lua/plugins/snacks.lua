@@ -21,7 +21,20 @@ They make up everything.
 			},
 		},
 		explorer = { enabled = true },
-		indent = { enabled = true },
+		indent = {
+			enabled = true,
+			chunk = {
+				enabled = true,
+				hl = "SnacksIndentChunk",
+				char = {
+					corner_top = "╭",
+					corner_bottom = "╰",
+					horizontal = "─",
+					vertical = "│",
+					arrow = "─",
+				},
+			},
+		},
 		lazygit = { enabled = true },
 		picker = {
 			enabled = true,
