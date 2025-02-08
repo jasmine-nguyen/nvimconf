@@ -1,5 +1,21 @@
 local api = vim.api
 local fn = vim.fn
+
+---Notify user
+---@param msg string
+---@param level number
+local function notify_with_title(msg, level)
+	vim.notify(string.format("%s", msg), level)
+end
+
+---Copy text to clipboard with notification
+---@param text string
+---@param description string
+local function copy_to_clipboard(text, description)
+	fn.setreg("+", text)
+	notify_with_title(string.format("Copied %s to clipboard", description), vim.log.levels.INFO)
+end
+
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -41,48 +57,19 @@ They make up everything.
 		picker = {
 			actions = {
 				copy_dir = function(picker)
-					---Notify user
-					---@param msg string
-					---@param level number
-					local function notify_with_title(msg, level)
-						vim.notify(string.format("%s", msg), level)
-					end
-
-					---Copy text to clipboard with notification
-					---@param text string
-					---@param description string
-					local function copy_to_clipboard(text, description)
-						fn.setreg("+", text)
-						notify_with_title(string.format("Copied %s to clipboard", description), vim.log.levels.INFO)
-					end
-
-					local item = picker:dir()
-					if not item then
+					local dir = picker:dir()
+					if not dir then
 						return
 					end
-					copy_to_clipboard(item, string.format("value of '%s'", item))
+					copy_to_clipboard(dir, string.format("value of '%s'", dir))
 				end,
-				copy_file = function(picker)
-					---Notify user
-					---@param msg string
-					---@param level number
-					local function notify_with_title(msg, level)
-						vim.notify(string.format("%s", msg), level)
-					end
-
-					---Copy text to clipboard with notification
-					---@param text string
-					---@param description string
-					local function copy_to_clipboard(text, description)
-						fn.setreg("+", text)
-						notify_with_title(string.format("Copied %s to clipboard", description), vim.log.levels.INFO)
-					end
-
+				copy_name = function(picker)
 					local item = picker:current()
 					if not item then
 						return
 					end
-					copy_to_clipboard(item, string.format("value of '%s'", item))
+					copy_to_clipboard(item.name, string.format("variable '%s' name", item.name))
+					picker:close()
 				end,
 			},
 			enabled = true,
@@ -103,7 +90,7 @@ They make up everything.
 				list = {
 					keys = {
 						["<leader>cd"] = { "copy_dir", mode = { "n" }, desc = "copy current directory" },
-						["<leader>cp"] = { "copy_file", mode = { "n" }, desc = "copy current file path" },
+						["<leader>cn"] = { "copy_name", mode = { "n" }, desc = "copy current file name" },
 					},
 				},
 			},
