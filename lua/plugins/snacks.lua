@@ -1,3 +1,5 @@
+local api = vim.api
+local fn = vim.fn
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -37,6 +39,52 @@ They make up everything.
 		},
 		lazygit = { enabled = true },
 		picker = {
+			actions = {
+				copy_dir = function(picker)
+					---Notify user
+					---@param msg string
+					---@param level number
+					local function notify_with_title(msg, level)
+						vim.notify(string.format("%s", msg), level)
+					end
+
+					---Copy text to clipboard with notification
+					---@param text string
+					---@param description string
+					local function copy_to_clipboard(text, description)
+						fn.setreg("+", text)
+						notify_with_title(string.format("Copied %s to clipboard", description), vim.log.levels.INFO)
+					end
+
+					local item = picker:dir()
+					if not item then
+						return
+					end
+					copy_to_clipboard(item, string.format("value of '%s'", item))
+				end,
+				copy_file = function(picker)
+					---Notify user
+					---@param msg string
+					---@param level number
+					local function notify_with_title(msg, level)
+						vim.notify(string.format("%s", msg), level)
+					end
+
+					---Copy text to clipboard with notification
+					---@param text string
+					---@param description string
+					local function copy_to_clipboard(text, description)
+						fn.setreg("+", text)
+						notify_with_title(string.format("Copied %s to clipboard", description), vim.log.levels.INFO)
+					end
+
+					local item = picker:current()
+					if not item then
+						return
+					end
+					copy_to_clipboard(item, string.format("value of '%s'", item))
+				end,
+			},
 			enabled = true,
 			jump = {
 				tagstack = true,
@@ -49,6 +97,14 @@ They make up everything.
 			sources = {
 				explorer = {
 					auto_close = true,
+				},
+			},
+			win = {
+				list = {
+					keys = {
+						["<leader>cd"] = { "copy_dir", mode = { "n" }, desc = "copy current directory" },
+						["<leader>cp"] = { "copy_file", mode = { "n" }, desc = "copy current file path" },
+					},
 				},
 			},
 		},
