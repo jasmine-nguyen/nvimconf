@@ -20,6 +20,7 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
+		-- Dashboard
 		dashboard = {
 			enabled = true,
 			autokeys = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -37,7 +38,9 @@ They make up everything.
 				{ section = "startup" },
 			},
 		},
+		-- Explorer
 		explorer = { enabled = true },
+		-- Indent
 		indent = {
 			enabled = true,
 			chunk = {
@@ -52,7 +55,23 @@ They make up everything.
 				},
 			},
 		},
-		lazygit = { enabled = true },
+		-- Lazygit
+		lazygit = {
+			enabled = true,
+			configure = true,
+			config = {
+				os = { editPreset = "nvim-remote" },
+				gui = {
+					-- set to an empty string "" to disable icons
+					nerdFontsVersion = "3",
+				},
+			},
+			win = {
+				style = "lazygit",
+				height = 0.9,
+			},
+		},
+		-- Picker
 		picker = {
 			actions = {
 				copy_dir = function(picker)
@@ -94,6 +113,7 @@ They make up everything.
 				},
 			},
 		},
+		-- Terminal
 		terminal = {
 			enabled = true,
 			win = {
