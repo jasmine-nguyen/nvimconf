@@ -94,6 +94,17 @@ They make up everything.
 				},
 			},
 		},
+		terminal = {
+			enabled = true,
+			win = {
+				style = "float",
+				backdrop = 60,
+				border = "rounded",
+				width = 0.6,
+				height = 0.6,
+				zindex = 100,
+			},
+		},
 	},
 	keys = {
 		{
@@ -158,6 +169,13 @@ They make up everything.
 				Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
 			end,
 			desc = "search Todo/Fix/Fixme",
+		},
+		{
+			"<leader>tt",
+			function()
+				Snacks.terminal.toggle()
+			end,
+			desc = "toggle terminal",
 		},
 	},
 }
