@@ -61,14 +61,14 @@ They make up everything.
 					if not dir then
 						return
 					end
-					copy_to_clipboard(dir, string.format("value of '%s'", dir))
+					copy_to_clipboard(dir, string.format("directory '%s'", dir))
 				end,
 				copy_name = function(picker)
 					local item = picker:current()
 					if not item then
 						return
 					end
-					copy_to_clipboard(item.name, string.format("variable '%s' name", item.name))
+					copy_to_clipboard(item.file, string.format("file path '%s'", item.file))
 					picker:close()
 				end,
 			},
