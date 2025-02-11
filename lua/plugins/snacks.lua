@@ -168,49 +168,42 @@ They make up everything.
 			function()
 				Snacks.picker.grep()
 			end,
-			desc = "grep",
+			desc = "search text",
 		},
 		{
 			"<leader>sG",
 			function()
 				Snacks.picker.grep_word()
 			end,
-			desc = "grep word",
+			desc = "search text under cursor",
 		},
 		{
 			"<leader>sB",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
-			desc = "grep open buffers",
-		},
-		{
-			"<leader>ss",
-			function()
-				Snacks.picker.lsp_symbols()
-			end,
-			desc = "lsp symbols",
+			desc = "search open buffers",
 		},
 		{
 			"\\",
 			function()
 				Snacks.picker.explorer()
 			end,
-			desc = "toggle snacks explorer",
+			desc = "toggle explorer",
 		},
 		{
 			"<leader>st",
 			function()
 				Snacks.picker.todo_comments()
 			end,
-			desc = "search Todo",
+			desc = "search todo",
 		},
 		{
-			"<leader>sT",
+			"<leader>sF",
 			function()
-				Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+				Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } })
 			end,
-			desc = "search Todo/Fix/Fixme",
+			desc = "search 	fix/fixme",
 		},
 		{
 			"<leader>tt",

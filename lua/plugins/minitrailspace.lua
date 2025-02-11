@@ -7,13 +7,13 @@ return {
 			"n",
 			"<leader>tl",
 			"<cmd>lua MiniTrailspace.trim_last_lines()<CR>",
-			{ desc = "trim all trailing empty lines", noremap = true }
+			{ desc = "trim empty lines", noremap = true }
 		)
 		vim.keymap.set(
 			"n",
 			"<leader>tw",
 			"<cmd>lua MiniTrailspace.trim()<CR>",
-			{ desc = "trim all trailing whitespace", noremap = true }
+			{ desc = "trim whitespace", noremap = true }
 		)
 	end,
 }

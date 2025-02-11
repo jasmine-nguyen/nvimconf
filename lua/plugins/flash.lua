@@ -8,7 +8,7 @@ return {
 			function()
 				require("flash").jump()
 			end,
-			desc = "Flash",
+			desc = "flash - jump",
 		},
 		{
 			"S",
@@ -16,7 +16,7 @@ return {
 			function()
 				require("flash").treesitter()
 			end,
-			desc = "Flash Treesitter",
+			desc = "flash - treesitter",
 		},
 	},
 }

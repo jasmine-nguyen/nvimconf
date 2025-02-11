@@ -120,29 +120,29 @@ return {
 
 			-- Jump to the definition of the word under your cursor.
 			-- To jump back, press <C-t>.
-			map("n", "gd", vim.lsp.buf.definition, "go to definition")
+			map("n", "gd", vim.lsp.buf.definition, "lsp - definition")
 
 			-- WARN: This is not Goto Definition, this is Goto Declaration.
 			-- For example, in C this would take you to the header.
-			map("n", "gD", vim.lsp.buf.declaration, "go to declaration")
+			map("n", "gD", vim.lsp.buf.declaration, "lsp - declaration")
 
 			-- Format current buffer
-			map("n", "<leader>f", vim.lsp.buf.format, "format current buffer")
+			map("n", "<leader>f", vim.lsp.buf.format, "lsp - format")
 
 			-- Jump to the implementation of the word under your cursor.
 			-- Useful when your language has ways of declaring types without an actual implementation.
-			map("n", "gi", vim.lsp.buf.implementation, "jump to implementation")
+			map("n", "gi", vim.lsp.buf.implementation, "lsp - implementation")
 
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
-			map("n", "<leader>rn", vim.lsp.buf.rename, "rename variable under cursor")
+			map("n", "<leader>rn", vim.lsp.buf.rename, "lsp - rename variable")
 
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
-			map("n", "<leader>ca", vim.lsp.buf.code_action, "execute code action")
+			map("n", "<leader>ca", vim.lsp.buf.code_action, "lsp - code action")
 
 			-- Show line diagnostic in a floating window, useful when error is too long
-			map("n", "<leader>of", vim.diagnostic.open_float, "show line diagnostics in a floating window")
+			map("n", "<leader>of", vim.diagnostic.open_float, "lsp - diagnostics")
 		end,
 	},
 }

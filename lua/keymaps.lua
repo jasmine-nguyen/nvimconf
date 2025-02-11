@@ -1,16 +1,10 @@
 -- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit buffer without saving", noremap = true })
-vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit buffer", noremap = true })
-vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save buffer", noremap = true })
+vim.keymap.set("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit without saving", noremap = true })
+vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
+vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
 vim.keymap.set("i", "jj", "<esc>", { desc = "escape", noremap = true })
-vim.keymap.set(
-	"n",
-	"<leader>a",
-	":keepjumps normal! ggVG<cr>",
-	{ desc = "select all text in current buffer", noremap = true }
-)
+vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>", { desc = "select all text", noremap = true })
 vim.keymap.set("n", "zz", "30j", { desc = "jump 30 lines", noremap = true })
-vim.keymap.set("n", "yc", "yygccp", { desc = "duplicate a line, comment out first line", noremap = true })
 vim.keymap.set("n", "cc", "ciw", { desc = "change current word", noremap = true })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
 
@@ -38,7 +32,7 @@ vim.keymap.set(
 	"n",
 	"<leader>rU",
 	[[:%s/\<<C-r><C-w>\>/<C-r>=toupper(expand('<cword>'))<CR>/gI<Left><Left><Left>]],
-	{ desc = "[P]GLOBALLY replace word I'm on with UPPERCASE" }
+	{ desc = "replace word under cursor with UPPERCASE" }
 )
 
 -- replaces the current word with the same word in lowercase, globally
@@ -46,23 +40,22 @@ vim.keymap.set(
 	"n",
 	"<leader>rL",
 	[[:%s/\<<C-r><C-w>\>/<C-r>=tolower(expand('<cword>'))<CR>/gI<Left><Left><Left>]],
-	{ desc = "[P]GLOBALLY replace word I'm on with lowercase" }
+	{ desc = "replace word under cursor with lowercase" }
 )
 
 --  see `:help wincmd` for a list of all window commands
-vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { desc = "move focus to the left window" })
-vim.keymap.set("n", "<C-l>", ":wincmd l<cr>", { desc = "move focus to the right window" })
-vim.keymap.set("n", "<C-j>", ":wincmd j<cr>", { desc = "move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", ":wincmd k<cr>", { desc = "move focus to the upper window" })
-
 -- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically" }) -- split window vertically
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" }) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "make splits equal size" }) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "close current split" }) -- close current split window
+vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { desc = "window - focus left" })
+vim.keymap.set("n", "<C-l>", ":wincmd l<cr>", { desc = "window - focus right" })
+vim.keymap.set("n", "<C-j>", ":wincmd j<cr>", { desc = "window - focus down" })
+vim.keymap.set("n", "<C-k>", ":wincmd k<cr>", { desc = "window - focus up" })
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "window - split vertically" }) -- split window vertically
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "window - split horizontally" }) -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "window - make splits equal size" }) -- make split windows equal width & height
+vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "window - close current split" }) -- close current split window
+
 -- tab management
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "open new tab" }) -- open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "close current tab" }) -- close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "go to next tab" }) --  go to next tab
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "go to previous tab" }) --  go to previous tab
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "open current buffer in new tab" }) --  move current buffer to new tab
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "tab - open new" }) -- open new tab
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "tab - close" }) -- close current tab
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "tab - next" }) --  go to next tab
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "tab - previous" }) --  go to previous tab
