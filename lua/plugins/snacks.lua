@@ -90,6 +90,10 @@ They make up everything.
 					picker:close()
 				end,
 			},
+			file = {
+				follow = true,
+				hidden = true,
+			},
 			enabled = true,
 			jump = {
 				tagstack = true,
