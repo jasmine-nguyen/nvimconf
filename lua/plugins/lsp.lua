@@ -1,6 +1,7 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		event = "VeryLazy",
 		cmd = "Mason",
 		build = ":MasonUpdate",
 		config = function()
@@ -9,6 +10,7 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
