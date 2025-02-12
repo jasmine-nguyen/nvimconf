@@ -1,61 +1,80 @@
--- [[ basic keymaps ]]
-vim.keymap.set("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit without saving", noremap = true })
-vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
-vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
-vim.keymap.set("i", "jj", "<esc>", { desc = "escape", noremap = true })
-vim.keymap.set("n", "<leader>a", ":keepjumps normal! ggVG<cr>", { desc = "select all text", noremap = true })
-vim.keymap.set("n", "zz", "30j", { desc = "jump 30 lines", noremap = true })
-vim.keymap.set("n", "cc", "ciw", { desc = "change current word", noremap = true })
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
+local map = vim.keymap.set
 
--- modify macro recording keymap to avoid hitting by accident
-vim.keymap.set("n", "q", "<nop>", { noremap = true })
-vim.keymap.set("n", "Q", "q", { noremap = true, desc = "record macro" })
-vim.keymap.set("n", "<C-q>", "Q", { noremap = true, desc = "replay last register" })
+-- Select all file visually
+map("n", "<leader>a", "ggVG", { remap = false, desc = "select entire buffer" })
 
--- modify x and x to delete text without changing the internal registers
-vim.keymap.set({ "n", "x" }, "x", '"_x')
-vim.keymap.set({ "n", "x" }, "x", '"_d')
--- vim.keymap.set({ "n", "x" }, "d", '"_x')
--- vim.keymap.set({ "n", "x" }, "d", '"_d')
+-- Copy file path to clipboard
+map(
+	"n",
+	"<leader>cfp",
+	[[:let @+ = expand('%')<cr>:echo   "Copied relative file path " . expand('%')<cr>]],
+	{ remap = false, silent = true, desc = "copy file path" }
+)
+map(
+	"n",
+	"<leader>cfd",
+	[[:let @+ = expand('%:p:h')<cr>:echo "Copied file directory path " . expand('%:p:h')<cr>]],
+	{ remap = false, silent = true, desc = "copy directory path" }
+)
 
--- use gh to move to the beginning of the line in normal mode
-vim.keymap.set({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
--- use gl to move to the end of the line in normal mode
-vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
--- move lines up and down in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down in visual mode" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move line up in visual mode" })
+-- General
+map("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit without saving", noremap = true, silent = true })
+map("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
+map("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
+map("i", "jj", "<esc>", { desc = "escape", noremap = true })
+map("n", "cc", "ciw", { desc = "change current word", noremap = true })
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
 
--- replaces the current word with the same word in uppercase, globally
-vim.keymap.set(
+-- Modify macro recording keymap to avoid hitting by accident
+map("n", "q", "<nop>", { noremap = true })
+map("n", "Q", "q", { noremap = true, desc = "record macro" })
+map("n", "<C-q>", "Q", { noremap = true, desc = "replay last register" })
+
+-- Modify x and x to delete text without changing the internal registers
+map({ "n", "x" }, "x", '"_x')
+map({ "n", "x" }, "x", '"_d')
+map({ "n", "x" }, "d", '"_x')
+map({ "n", "x" }, "d", '"_d')
+
+-- Go to the beginning of the line in normal mode
+map({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
+-- Go to the end of the line in normal mode
+map({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
+-- Move lines up and down in visual mode
+map("n", "J", ":m .+1<CR>==") -- move line up(n)
+map("n", "K", ":m .-2<CR>==") -- move line down(n)
+
+-- Replaces the current word with the same word in uppercase, globally
+map(
 	"n",
 	"<leader>rU",
 	[[:%s/\<<C-r><C-w>\>/<C-r>=toupper(expand('<cword>'))<CR>/gI<Left><Left><Left>]],
 	{ desc = "replace word under cursor with UPPERCASE" }
 )
 
--- replaces the current word with the same word in lowercase, globally
-vim.keymap.set(
+-- Replaces the current word with the same word in lowercase, globally
+map(
 	"n",
 	"<leader>rL",
 	[[:%s/\<<C-r><C-w>\>/<C-r>=tolower(expand('<cword>'))<CR>/gI<Left><Left><Left>]],
 	{ desc = "replace word under cursor with lowercase" }
 )
+-- Scrolling centralized
+map("n", "<C-u>", "<C-u>zz", { remap = false })
+map("n", "<C-d>", "<C-d>zz", { remap = false })
 
---  see `:help wincmd` for a list of all window commands
--- window management
-vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { desc = "window - focus left" })
-vim.keymap.set("n", "<C-l>", ":wincmd l<cr>", { desc = "window - focus right" })
-vim.keymap.set("n", "<C-j>", ":wincmd j<cr>", { desc = "window - focus down" })
-vim.keymap.set("n", "<C-k>", ":wincmd k<cr>", { desc = "window - focus up" })
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "window - split vertically" }) -- split window vertically
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "window - split horizontally" }) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "window - make splits equal size" }) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "window - close current split" }) -- close current split window
+-- Window management
+map("n", "<C-h>", ":wincmd h<cr>", { desc = "window - focus left" })
+map("n", "<C-l>", ":wincmd l<cr>", { desc = "window - focus right" })
+map("n", "<C-j>", ":wincmd j<cr>", { desc = "window - focus down" })
+map("n", "<C-k>", ":wincmd k<cr>", { desc = "window - focus up" })
+map("n", "<leader>sv", "<C-w>v", { desc = "window - split vertically" })
+map("n", "<leader>sh", "<C-w>s", { desc = "window - split horizontally" })
+map("n", "<leader>se", "<C-w>=", { desc = "window - make splits equal size" })
+map("n", "<leader>sx", "<cmd>close<CR>", { desc = "window - close current split" })
 
--- tab management
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "tab - open new" }) -- open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "tab - close" }) -- close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "tab - next" }) --  go to next tab
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "tab - previous" }) --  go to previous tab
+-- Tab management
+map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "tab - open new" })
+map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "tab - close" })
+map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "tab - next" })
+map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "tab - previous" })
