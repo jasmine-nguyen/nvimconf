@@ -6,15 +6,15 @@ map("n", "<leader>a", "ggVG", { remap = false, desc = "select entire buffer" })
 -- Copy file path to clipboard
 map(
 	"n",
-	"<leader>cfp",
-	[[:let @+ = expand('%')<cr>:echo   "Copied relative file path " . expand('%')<cr>]],
-	{ remap = false, silent = true, desc = "copy file path" }
+	"<leader>yn",
+	[[:let @+ = expand('%:t')<cr>:echo   "Yanked filename: " . expand('%:t')<cr>]],
+	{ remap = false, silent = true, desc = "yank filename" }
 )
 map(
 	"n",
-	"<leader>cfd",
-	[[:let @+ = expand('%:p:h')<cr>:echo "Copied file directory path " . expand('%:p:h')<cr>]],
-	{ remap = false, silent = true, desc = "copy directory path" }
+	"<leader>yp",
+	[[:let @+ = expand('%:p:h')<cr>:echo "Yanked filepath: " . expand('%:p:h')<cr>]],
+	{ remap = false, silent = true, desc = "yank filepath" }
 )
 
 -- General
@@ -29,12 +29,6 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", n
 map("n", "q", "<nop>", { noremap = true })
 map("n", "Q", "q", { noremap = true, desc = "record macro" })
 map("n", "<C-q>", "Q", { noremap = true, desc = "replay last register" })
-
--- Modify x and x to delete text without changing the internal registers
-map({ "n", "x" }, "x", '"_x')
-map({ "n", "x" }, "x", '"_d')
-map({ "n", "x" }, "d", '"_x')
-map({ "n", "x" }, "d", '"_d')
 
 -- Go to the beginning of the line in normal mode
 map({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
