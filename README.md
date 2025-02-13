@@ -17,4 +17,4 @@ Run neovim in your terminal:
 ```
 nvim
 ```
-**Note** First start up will take more times as plugins are being installed for the first time. Also make sure you run `:checkhealth` to ensure everything is install correctly. You might need to install extra dependencies using `brew`.
+**Note** First start up will take more times as plugins are being installed for the first time. Also make sure you run `:checkhealth` to ensure everything is installed correctly. You might need to install extra dependencies using `brew`.
