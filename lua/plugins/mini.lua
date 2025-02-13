@@ -33,7 +33,7 @@ return {
 	},
 	{
 		"echasnovski/mini.icons",
-		enabled = true,
+		event = "VeryLazy",
 	},
 	{
 		"echasnovski/mini.pairs",
