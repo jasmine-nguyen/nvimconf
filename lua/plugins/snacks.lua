@@ -74,7 +74,7 @@ They make up everything.
 		},
 		-- Picker
 		picker = {
-			file = {
+			files = {
 				follow = true,
 				hidden = true,
 			},
@@ -83,7 +83,7 @@ They make up everything.
 				tagstack = true,
 				reuse_win = true,
 			},
-			git_files = { untracked = true, submodule = true },
+			git_files = { untracked = true, submodules = true },
 			matcher = {
 				frecency = true,
 			},
