@@ -45,7 +45,7 @@ They make up everything.
 						action = ":Lazy",
 						enabled = package.loaded.lazy ~= nil,
 					},
-					{ icon = " ", key = "<esc>", desc = "Quit", action = ":qa" },
+					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
 			},
 			sections = {
