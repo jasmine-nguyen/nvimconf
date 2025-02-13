@@ -2,7 +2,7 @@
 
 This config was aimed to be minimalistic ➰, yet still appealing ✨ and ⚡ fast. Current startup time is 26ms on my MacAir.  
 
-![startup screen](https://imgur.com/9POu6wn)
+![startup screen](https://imgur.com/a/3TJWToI)
 
 # How to use
 Install neovim:
