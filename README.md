@@ -1,6 +1,6 @@
-# Welcome to my neovim config
+# Simple Neovim for Salesforce, Golang and Typescript development
 
-A simple neovim config created by me for me. This config was aimed to be minimalistic ➰, yet still appealing ✨ and ⚡ fast. Current startup time is 26ms on my MacAir.  
+This config was aimed to be minimalistic ➰, yet still appealing ✨ and ⚡ fast. Current startup time is 26ms on my MacAir.  
 
 # How to use
 Install neovim:
