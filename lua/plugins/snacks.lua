@@ -1,20 +1,3 @@
-local fn = vim.fn
-
----Notify user
----@param msg string
----@param level number
-local function notify_with_title(msg, level)
-	vim.notify(string.format("%s", msg), level)
-end
-
----Copy text to clipboard with notification
----@param text string
----@param description string
-local function copy_to_clipboard(text, description)
-	fn.setreg("+", text)
-	notify_with_title(string.format("Copied %s to clipboard", description), vim.log.levels.INFO)
-end
-
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -91,23 +74,6 @@ They make up everything.
 		},
 		-- Picker
 		picker = {
-			actions = {
-				copy_dir = function(picker)
-					local dir = picker:dir()
-					if not dir then
-						return
-					end
-					copy_to_clipboard(dir, string.format("directory '%s'", dir))
-				end,
-				copy_name = function(picker)
-					local item = picker:current()
-					if not item then
-						return
-					end
-					copy_to_clipboard(item.file, string.format("file path '%s'", item.file))
-					picker:close()
-				end,
-			},
 			file = {
 				follow = true,
 				hidden = true,
@@ -124,14 +90,6 @@ They make up everything.
 			sources = {
 				explorer = {
 					auto_close = true,
-				},
-			},
-			win = {
-				list = {
-					keys = {
-						["<leader>cd"] = { "copy_dir", mode = { "n" }, desc = "copy current directory" },
-						["<leader>cn"] = { "copy_name", mode = { "n" }, desc = "copy current file name" },
-					},
 				},
 			},
 		},
@@ -161,7 +119,7 @@ They make up everything.
 			function()
 				Snacks.picker.files()
 			end,
-			desc = "find files",
+			desc = "search files",
 		},
 		{
 			"<leader>sg",
@@ -185,7 +143,7 @@ They make up everything.
 			desc = "search open buffers",
 		},
 		{
-			"\\",
+			"E",
 			function()
 				Snacks.picker.explorer()
 			end,
@@ -203,7 +161,7 @@ They make up everything.
 			function()
 				Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } })
 			end,
-			desc = "search 	fix/fixme",
+			desc = "search fixme",
 		},
 		{
 			"<leader>tt",
