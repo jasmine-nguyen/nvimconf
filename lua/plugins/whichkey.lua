@@ -139,6 +139,14 @@ return {
 				desc = "toggle terminal",
 				icon = "",
 			},
+			{
+				"<leader>z",
+				function()
+					Snacks.zen()
+				end,
+				desc = "toggle zen mode",
+				icon = "󰶟",
+			},
 			-- Window management
 			{ "<leader>sv", "<C-w>v", desc = "window - split vertically", icon = "" },
 			{ "<leader>sh", "<C-w>s", desc = "window - split horizontally", icon = "" },

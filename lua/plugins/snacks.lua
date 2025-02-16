@@ -105,6 +105,8 @@ They make up everything.
 				zindex = 100,
 			},
 		},
+		-- Zen
+		zen = { enabled = true },
 	},
 	keys = {
 		{
@@ -183,6 +185,13 @@ They make up everything.
 				Snacks.terminal.toggle()
 			end,
 			desc = "toggle terminal",
+		},
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "toggle zen mode",
 		},
 	},
 }
