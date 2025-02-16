@@ -150,6 +150,20 @@ They make up everything.
 			desc = "toggle explorer",
 		},
 		{
+			"<leader>sm",
+			function()
+				Snacks.picker.marks()
+			end,
+			desc = "search marks",
+		},
+		{
+			"<leader>si",
+			function()
+				Snacks.picker.icons()
+			end,
+			desc = "search icons",
+		},
+		{
 			"<leader>st",
 			function()
 				Snacks.picker.todo_comments()
