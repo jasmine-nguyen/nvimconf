@@ -23,9 +23,8 @@ return {
 				desc = "yank filepath",
 				icon = "",
 			},
-
-			-- General
 			{ "<leader>q", "<cmd>:q<cr>", desc = "quit", icon = "󰈆" },
+			{ "<leader>w", "<cmd>:w<cr>", desc = "save", icon = "" },
 			{
 				"<leader>Q",
 				"<cmd>:q!<cr>",
@@ -44,6 +43,13 @@ return {
 				desc = "replace word under cursor with lowercase",
 				icon = " ",
 			},
+			-- LSP
+			{ "gd", vim.lsp.buf.definition, desc = "lsp - definition", icon = "" },
+			{ "gD", vim.lsp.buf.declaration, desc = "lsp - declaration", icon = "" },
+			{ "<leader>f", vim.lsp.buf.format, desc = "lsp - format", icon = "" },
+			{ "<leader>rn", vim.lsp.buf.rename, desc = "lsp - rename variable", icon = "" },
+			{ "<leader>ca", vim.lsp.buf.code_action, desc = "lsp - code action", icon = "" },
+			{ "<leader>of", vim.diagnostic.open_float, desc = "lsp - diagnostics", icon = "" },
 			-- Snacks
 			{
 				"<leader>gg",
@@ -133,7 +139,6 @@ return {
 				desc = "toggle terminal",
 				icon = "",
 			},
-
 			-- Window management
 			{ "<leader>sv", "<C-w>v", desc = "window - split vertically", icon = "" },
 			{ "<leader>sh", "<C-w>s", desc = "window - split horizontally", icon = "" },

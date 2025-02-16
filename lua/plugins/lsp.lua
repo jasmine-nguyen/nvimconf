@@ -50,7 +50,7 @@ return {
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
 				apex_jar_path = "$Home/lsp/apex-jorje-lsp.jar",
-				apex_enable_semantic_errors = true, -- Whether to allow Apex Language Server to surface semantic errors
+				apex_enable_semantic_errors = true,   -- Whether to allow Apex Language Server to surface semantic errors
 				apex_enable_completion_statistics = true, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 			})
 
@@ -131,10 +131,6 @@ return {
 
 			-- Format current buffer
 			map("n", "<leader>f", vim.lsp.buf.format, "lsp - format")
-
-			-- Jump to the implementation of the word under your cursor.
-			-- Useful when your language has ways of declaring types without an actual implementation.
-			map("n", "gi", vim.lsp.buf.implementation, "lsp - implementation")
 
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
