@@ -13,7 +13,7 @@ map(
 map(
 	"n",
 	"<leader>yp",
-	[[:let @+ = expand('%:p:h')<cr>:echo "Yanked filepath: " . expand('%:p:h')<cr>]],
+	[[:let @+ = expand('%:p:h')<cr>:echo "Yanked filepath: " . expand('%:~:')<cr>]],
 	{ remap = false, silent = true, desc = "yank filepath" }
 )
 
