@@ -106,7 +106,7 @@ They make up everything.
 			},
 		},
 		-- Zen
-		zen = { enabled = true },
+		zen = { enabled = true, toggles = { dim = false } },
 	},
 	keys = {
 		{
