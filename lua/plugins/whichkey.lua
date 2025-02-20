@@ -19,7 +19,7 @@ return {
 			},
 			{
 				"<leader>yp",
-				[[:let @+ = expand('%:p:h')<cr>:echo "Yanked filepath: " . expand('%:~:')<cr>]],
+				[[:let @+ = expand('%:p')<cr>:echo "Yanked filepath: " . expand('%:p')<cr>]],
 				desc = "yank filepath",
 				icon = "",
 			},
