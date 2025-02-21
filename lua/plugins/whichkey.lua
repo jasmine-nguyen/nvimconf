@@ -12,6 +12,12 @@ return {
 				icon = "",
 			},
 			{
+				"<leader>dm",
+				"<cmd>delmarks!<CR>",
+				desc = "delete all marks in current buffer",
+				icon = "",
+			},
+			{
 				"<leader>yn",
 				[[:let @+ = expand('%:t')<cr>:echo   "Yanked filename: " . expand('%:t')<cr>]],
 				desc = "yank filename",

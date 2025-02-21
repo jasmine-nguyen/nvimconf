@@ -25,6 +25,7 @@ map("i", "jj", "<esc>", { desc = "escape", noremap = true })
 map("i", "JJ", "<esc>", { desc = "escape", noremap = true })
 map("n", "cc", '"_ciw', { desc = "change current word", noremap = true })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
+map("n", "<leader>dm", "<cmd>delmarks!<CR>", { desc = "delete all marks in current buffer", noremap = true })
 
 -- Modify macro recording keymap to avoid hitting by accident
 map("n", "q", "<nop>", { noremap = true })
