@@ -7,14 +7,14 @@ map("n", "<leader>a", "ggVG", { remap = false, desc = "select entire buffer" })
 map(
 	"n",
 	"<leader>yn",
-	[[:let @+ = expand('%:t')<cr>:echo   "Yanked filename: " . expand('%:t')<cr>]],
-	{ remap = false, silent = true, desc = "yank filename" }
+	[[:let @+ = expand('%:t')<cr>:echo   "Yanked filepath: " . expand('%:t')<cr>]],
+	{ remap = false, silent = true, desc = "yank filepath" }
 )
 map(
 	"n",
 	"<leader>yp",
-	[[:let @+ = expand('%:p')<cr>:echo "Yanked filepath: " . expand('%:p')<cr>]],
-	{ remap = false, silent = true, desc = "yank filepath" }
+	[[:let @+ = expand('%')<cr>:echo "Yanked directory: " . expand('%')<cr>]],
+	{ remap = false, silent = true, desc = "yank directory" }
 )
 
 -- General
@@ -22,7 +22,8 @@ map("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit without saving", noremap = 
 map("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
 map("i", "jj", "<esc>", { desc = "escape", noremap = true })
-map("n", "cc", "_ciw", { desc = "change current word", noremap = true })
+map("i", "JJ", "<esc>", { desc = "escape", noremap = true })
+map("n", "cc", '"_ciw', { desc = "change current word", noremap = true })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
 
 -- Modify macro recording keymap to avoid hitting by accident
@@ -34,9 +35,12 @@ map("n", "<C-q>", "Q", { noremap = true, desc = "replay last register" })
 map({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
 -- Go to the end of the line in normal mode
 map({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
+-- Move lines up and down in normal mode
+map("n", "-", ":m .+1<CR>==")     -- move line up(n)
+map("n", "_", ":m .-2<CR>==")     -- move line down(n)
 -- Move lines up and down in visual mode
-map({ "n", "v" }, "J", ":m .+1<CR>==") -- move line up(n)
-map({ "n", "v" }, "K", ":m .-2<CR>==") -- move line down(n)
+map("v", "-", ":m '>+1<CR>gv=gv") -- move line up(v)
+map("v", "_", ":m '<-2<CR>gv=gv") -- move line down(v)
 
 -- Replaces the current word with the same word in uppercase, globally
 map(
