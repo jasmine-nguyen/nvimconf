@@ -22,7 +22,7 @@ map("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit without saving", noremap = 
 map("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
 map("i", "jj", "<esc>", { desc = "escape", noremap = true })
-map("n", "cc", "ciw", { desc = "change current word", noremap = true })
+map("n", "cc", "_ciw", { desc = "change current word", noremap = true })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
 
 -- Modify macro recording keymap to avoid hitting by accident
@@ -35,8 +35,8 @@ map({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
 -- Go to the end of the line in normal mode
 map({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
 -- Move lines up and down in visual mode
-map("n", "J", ":m .+1<CR>==") -- move line up(n)
-map("n", "K", ":m .-2<CR>==") -- move line down(n)
+map({ "n", "v" }, "J", ":m .+1<CR>==") -- move line up(n)
+map({ "n", "v" }, "K", ":m .-2<CR>==") -- move line down(n)
 
 -- Replaces the current word with the same word in uppercase, globally
 map(
