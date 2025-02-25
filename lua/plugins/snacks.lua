@@ -30,11 +30,11 @@ Never trust an atom.
 They make up everything.
 ]],
 				keys = {
-					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+					{ icon = " ", key = "F", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+					{ icon = " ", key = "N", desc = "New File", action = ":ene | startinsert" },
 					{
 						icon = " ",
-						key = "g",
+						key = "G",
 						desc = "Find Text",
 						action = ":lua Snacks.dashboard.pick('live_grep')",
 					},
@@ -187,7 +187,7 @@ They make up everything.
 			desc = "search open buffers",
 		},
 		{
-			"E",
+			"<leader>e",
 			function()
 				Snacks.picker.explorer()
 			end,

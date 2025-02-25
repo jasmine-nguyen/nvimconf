@@ -97,7 +97,7 @@ return {
 				icon = "",
 			},
 			{
-				"E",
+				"<leader>e",
 				function()
 					Snacks.picker.explorer()
 				end,
