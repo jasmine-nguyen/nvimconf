@@ -15,12 +15,12 @@ return {
 			"nvimtools/none-ls-extras.nvim",
 		},
 		config = function()
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			local masonnullls = require("mason-null-ls")
 			masonnullls.setup({
-				ensure_installed = { "eslint_d", "prettierd", "protolint", "stylua", "yamlfmt", "yamllint" },
+				ensure_installed = { "eslint_d", "prettier", "prettierd", "protolint", "stylua", "yamlfmt", "yamllint" },
 			})
 			local null_ls = require("null-ls")
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			null_ls.setup({
 				sources = {
 					require("none-ls.diagnostics.eslint_d"),
@@ -31,6 +31,10 @@ return {
 					null_ls.builtins.diagnostics.yamllint,
 					null_ls.builtins.formatting.buf,
 					null_ls.builtins.formatting.gofmt,
+					null_ls.builtins.formatting.prettier.with({
+						filetypes = { "apex" },
+						extra_args = { "--plugin=prettier-plugin-apex", "--write" },
+					}),
 					null_ls.builtins.formatting.prettierd,
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.yamlfmt,
@@ -42,7 +46,7 @@ return {
 							group = augroup,
 							buffer = bufnr,
 							callback = function()
-								vim.lsp.buf.format({ async = false })
+								vim.lsp.buf.format()
 							end,
 						})
 					end
