@@ -30,11 +30,11 @@ Never trust an atom.
 They make up everything.
 ]],
 				keys = {
-					{ icon = " ", key = "F", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-					{ icon = " ", key = "N", desc = "New File", action = ":ene | startinsert" },
+					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
 					{
 						icon = " ",
-						key = "G",
+						key = "g",
 						desc = "Find Text",
 						action = ":lua Snacks.dashboard.pick('live_grep')",
 					},
