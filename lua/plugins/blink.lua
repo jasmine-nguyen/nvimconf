@@ -5,6 +5,11 @@ return {
 		version = "v0.*",
 		dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 		opts = {
+			cmdline = {
+				completion = {
+					menu = { auto_show = true },
+				},
+			},
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
 			},
