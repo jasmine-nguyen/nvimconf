@@ -31,11 +31,9 @@ return {
 					null_ls.builtins.diagnostics.yamllint,
 					null_ls.builtins.formatting.buf,
 					null_ls.builtins.formatting.gofmt,
-					null_ls.builtins.formatting.prettier.with({
+					null_ls.builtins.formatting.prettierd.with({
 						filetypes = { "apex" },
-						extra_args = { "--plugin=prettier-plugin-apex", "--write" },
 					}),
-					null_ls.builtins.formatting.prettierd,
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.yamlfmt,
 				},
