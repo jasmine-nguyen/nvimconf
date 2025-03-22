@@ -9,6 +9,9 @@ return {
 				completion = {
 					menu = { auto_show = true },
 				},
+				keymap = {
+					preset = "inherit",
+				},
 			},
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
