@@ -32,10 +32,9 @@ return {
 					null_ls.builtins.formatting.buf,
 					null_ls.builtins.formatting.gofmt,
 					null_ls.builtins.formatting.prettierd.with({
-						filetypes = { "apex" },
+						filetypes = { "apex", "css", "html", "json", "javascript", "typescript", "yaml" },
 					}),
 					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.formatting.yamlfmt,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
