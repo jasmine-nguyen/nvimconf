@@ -16,6 +16,9 @@ return {
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
 			},
+			fuzzy = {
+				implementation = "prefer_rust",
+			},
 			keymap = { preset = "super-tab" },
 			snippets = { preset = "luasnip" },
 			sources = {
