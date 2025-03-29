@@ -32,20 +32,17 @@ return {
 		dependencies = { "saghen/blink.cmp" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		event = { "BufReadPost", "BufNewFile" },
-		opts = {
-			diagnostics = {
-				virtual_text = false,
-				virtual_lines = true,
-			},
-		},
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			capabilities.textDocument.completion.completionItem.snippetSupport = true
-			capabilities.textDocument.foldingRange = {
-				dynamicRegistration = false,
-				lineFoldingOnly = true,
+			local capabilities = {
+				textDocument = {
+					foldingRange = {
+						dynamicRegistration = true,
+						lineFoldingOnly = true,
+					},
+				},
 			}
+			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
@@ -141,9 +138,6 @@ return {
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
 			map("n", "<leader>ca", vim.lsp.buf.code_action, "lsp - code action")
-
-			-- Show line diagnostic in a floating window, useful when error is too long
-			map("n", "<leader>of", vim.diagnostic.open_float, "lsp - diagnostics")
 		end,
 	},
 }
