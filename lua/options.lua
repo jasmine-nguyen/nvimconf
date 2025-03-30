@@ -64,6 +64,15 @@ vim.opt.wrap = true
 -- maximum width of text that is being inserted.  a longer line will be broken after white space to get this width.
 vim.opt.textwidth = 80
 
+-- folding
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
+vim.opt.fillchars:append({ fold = " " })
+
 -- Apex filetypes
 vim.filetype = on
 vim.filetype.add({
