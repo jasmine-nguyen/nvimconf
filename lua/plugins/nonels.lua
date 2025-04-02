@@ -35,6 +35,7 @@ return {
 						filetypes = { "apex", "css", "html", "json", "javascript", "typescript", "yaml" },
 					}),
 					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.xmllint,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
