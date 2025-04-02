@@ -92,5 +92,5 @@ vim.filetype.add({
 --  see `:help 'clipboard'`
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
-	vim.diagnostic.config({ virtual_text = false, virtual_lines = true })
+	vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true } })
 end)
