@@ -14,6 +14,7 @@ return {
 			},
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
+				trigger = { show_in_snipper = false },
 			},
 			fuzzy = {
 				implementation = "prefer_rust",
