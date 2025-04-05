@@ -152,77 +152,70 @@ They make up everything.
 	},
 	keys = {
 		{
-			"<leader>gg",
+			"lz",
 			function()
 				Snacks.lazygit()
 			end,
 			desc = "open lazygit",
 		},
 		{
-			"<leader>sf",
+			"ff",
 			function()
 				Snacks.picker.files()
 			end,
-			desc = "search files",
+			desc = "find files",
 		},
 		{
-			"<leader>sg",
+			"fg",
 			function()
 				Snacks.picker.grep()
 			end,
-			desc = "search text",
+			desc = "find text",
 		},
 		{
-			"<leader>sG",
+			"fw",
 			function()
 				Snacks.picker.grep_word()
 			end,
-			desc = "search text under cursor",
+			desc = "find text under cursor",
 		},
 		{
-			"<leader>sB",
+			"fb",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
-			desc = "search open buffers",
+			desc = "find open buffers",
 		},
 		{
-			"<leader>e",
+			"fe",
 			function()
 				Snacks.picker.explorer()
 			end,
 			desc = "toggle explorer",
 		},
 		{
-			"<leader>sm",
+			"fm",
 			function()
 				Snacks.picker.marks()
 			end,
-			desc = "search marks",
+			desc = "find marks",
 		},
 		{
-			"<leader>si",
+			"fi",
 			function()
 				Snacks.picker.icons()
 			end,
-			desc = "search icons",
+			desc = "find icons",
 		},
 		{
-			"<leader>st",
+			"fc",
 			function()
 				Snacks.picker.todo_comments()
 			end,
-			desc = "search todo",
+			desc = "find todo comments",
 		},
 		{
-			"<leader>sF",
-			function()
-				Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } })
-			end,
-			desc = "search fixme",
-		},
-		{
-			"<leader>tt",
+			"tt",
 			function()
 				Snacks.terminal.toggle()
 			end,

@@ -57,7 +57,7 @@ return {
 			{ "<leader>of", vim.diagnostic.open_float, desc = "lsp - diagnostics", icon = "" },
 			-- Snacks
 			{
-				"<leader>gg",
+				"lz",
 				function()
 					Snacks.lazygit()
 				end,
@@ -65,39 +65,39 @@ return {
 				icon = "",
 			},
 			{
-				"<leader>sf",
+				"ff",
 				function()
 					Snacks.picker.files()
 				end,
-				desc = "search files",
+				desc = "find files",
 				icon = "",
 			},
 			{
-				"<leader>sg",
+				"fg",
 				function()
 					Snacks.picker.grep()
 				end,
-				desc = "search text",
+				desc = "find text",
 				icon = "",
 			},
 			{
-				"<leader>sG",
+				"fw",
 				function()
 					Snacks.picker.grep_word()
 				end,
-				desc = "search text under cursor",
+				desc = "find text under cursor",
 				icon = "",
 			},
 			{
-				"<leader>sB",
+				"fb",
 				function()
 					Snacks.picker.grep_buffers()
 				end,
-				desc = "search open buffers",
+				desc = "find open buffers",
 				icon = "",
 			},
 			{
-				"<leader>e",
+				"fe",
 				function()
 					Snacks.picker.explorer()
 				end,
@@ -105,39 +105,31 @@ return {
 				icon = "󰙅",
 			},
 			{
-				"<leader>sm",
+				"fm",
 				function()
 					Snacks.picker.marks()
 				end,
-				desc = "search marks",
+				desc = "find marks",
 				icon = "",
 			},
 			{
-				"<leader>si",
+				"fi",
 				function()
 					Snacks.picker.icons()
 				end,
-				desc = "search icons",
+				desc = "find icons",
 				icon = "",
 			},
 			{
-				"<leader>st",
+				"fc",
 				function()
 					Snacks.picker.todo_comments()
 				end,
-				desc = "search todo",
+				desc = "find todo comments",
 				icon = "",
 			},
 			{
-				"<leader>sF",
-				function()
-					Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } })
-				end,
-				desc = "search fixme",
-				icon = "",
-			},
-			{
-				"<leader>tt",
+				"tt",
 				function()
 					Snacks.terminal.toggle()
 				end,
