@@ -14,15 +14,28 @@ return {
 			},
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
-				trigger = { show_in_snippet = false },
+				documentation = { auto_show = true },
+				ghost_text = { enabled = true },
+				menu = { auto_show = true },
+				trigger = { prefetch_on_insert = false, show_in_snippet = false },
 			},
 			fuzzy = {
 				implementation = "prefer_rust",
 			},
 			keymap = { preset = "super-tab" },
+			signature = {
+				enabled = true,
+			},
 			snippets = { preset = "luasnip" },
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path", "snippets", "buffer", "minuet" },
+				providers = {
+					minuet = {
+						name = "minuet",
+						module = "minuet.blink",
+						score_offset = 8, -- Gives minuet higher priority among suggestions
+					},
+				},
 			},
 		},
 	},
