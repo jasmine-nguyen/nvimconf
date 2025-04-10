@@ -22,7 +22,6 @@ map("n", "<leader>Q", "<cmd>:q!<cr>", { desc = "quit without saving", noremap = 
 map("n", "<leader>q", "<cmd>:q<cr>", { desc = "quit", noremap = true })
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "save", noremap = true })
 map("i", "jj", "<esc>", { desc = "escape", noremap = true })
-map("i", "JJ", "<esc>", { desc = "escape", noremap = true })
 map("n", "cc", '"_ciw', { desc = "change current word", noremap = true })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "turn off highlight search", noremap = true })
 map("n", "<leader>dm", "<cmd>delmarks!<CR>", { desc = "delete all marks in current buffer", noremap = true })
