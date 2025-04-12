@@ -121,6 +121,8 @@ They make up everything.
 			git_files = { untracked = true, submodules = true },
 			matcher = {
 				frecency = true,
+				smartcase = true,
+				ignorecase = true,
 			},
 			sources = {
 				explorer = {
