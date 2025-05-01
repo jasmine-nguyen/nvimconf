@@ -10,7 +10,7 @@
   "mini.ai": { "branch": "main", "commit": "e139eb1101beb0250fea322f8c07a42f0f175688" },
   "mini.icons": { "branch": "main", "commit": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a" },
   "mini.pairs": { "branch": "main", "commit": "69864a2efb36c030877421634487fd90db1e4298" },
-  "minuet-ai.nvim": { "branch": "main", "commit": "fb1616faaf4af1c6a4ac6952d9e73833206600a5" },
+  "minuet-ai.nvim": { "branch": "main", "commit": "ab9cbe8acc1b8a04d57010015619c8e3039e298c" },
   "none-ls-extras.nvim": { "branch": "main", "commit": "80dfc30b674c45ad892726f656440cc9e69b82e3" },
   "none-ls.nvim": { "branch": "main", "commit": "a49f5a79cdb76e0dc1a98899c8598f4db014c5e7" },
   "nvim-lspconfig": { "branch": "master", "commit": "94d0fec9135719e046903bbbbf8f39e3d3436d4e" },
