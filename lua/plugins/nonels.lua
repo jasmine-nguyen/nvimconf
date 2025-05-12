@@ -17,7 +17,16 @@ return {
 		config = function()
 			local masonnullls = require("mason-null-ls")
 			masonnullls.setup({
-				ensure_installed = { "eslint_d", "prettier", "prettierd", "protolint", "stylua", "yamlfmt", "yamllint" },
+				ensure_installed = {
+					"eslint_d",
+					"gofumpt",
+					"prettier",
+					"prettierd",
+					"protolint",
+					"stylua",
+					"yamlfmt",
+					"yamllint",
+				},
 			})
 			local null_ls = require("null-ls")
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
