@@ -37,14 +37,7 @@ return {
 			},
 			snippets = { preset = "luasnip" },
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer", "minuet" },
-				providers = {
-					minuet = {
-						name = "minuet",
-						module = "minuet.blink",
-						score_offset = 8, -- Gives minuet higher priority among suggestions
-					},
-				},
+				default = { "lsp", "snippets", "buffer", "path" },
 			},
 		},
 	},
