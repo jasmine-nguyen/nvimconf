@@ -18,7 +18,6 @@ return {
 			local masonnullls = require("mason-null-ls")
 			masonnullls.setup({
 				ensure_installed = {
-					"eslint_d",
 					"gofumpt",
 					"prettier",
 					"prettierd",
@@ -32,7 +31,6 @@ return {
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			null_ls.setup({
 				sources = {
-					require("none-ls.diagnostics.eslint_d"),
 					null_ls.builtins.diagnostics.protolint,
 					null_ls.builtins.diagnostics.golangci_lint.with({
 						args = { "--allow-parallel-runners" },
