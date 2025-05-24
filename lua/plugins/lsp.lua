@@ -29,19 +29,34 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
-		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = {
-				textDocument = {
-					foldingRange = {
-						dynamicRegistration = true,
-						lineFoldingOnly = true,
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+			capabilities.textDocument.foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			}
+			capabilities.textDocument.formatting = {
+				dynamicRegistration = false,
+			}
+			capabilities.textDocument.semanticTokens.augmentsSyntaxTokens = false
+			capabilities.textDocument.completion.completionItem = {
+				contextSupport = true,
+				snippetSupport = true,
+				deprecatedSupport = true,
+				commitCharactersSupport = true,
+				resolveSupport = {
+					properties = {
+						"documentation",
+						"detail",
+						"additionalTextEdits",
 					},
 				},
+				labelDetailsSupport = true,
+				documentationFormat = { "markdown", "plaintext" },
 			}
-			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
