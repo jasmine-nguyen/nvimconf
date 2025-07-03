@@ -2,7 +2,6 @@ return {
 	{
 		"saghen/blink.cmp",
 		version = "v0.*",
-		dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 		opts = {
 			cmdline = {
 				completion = {
@@ -35,7 +34,6 @@ return {
 			signature = {
 				enabled = true,
 			},
-			snippets = { preset = "luasnip" },
 			sources = {
 				default = { "lsp", "snippets", "buffer", "path" },
 			},

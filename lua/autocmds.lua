@@ -6,3 +6,11 @@ vim.api.nvim_create_autocmd("textyankpost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- Fix `commentstring` issue for apex
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "apex" },
+	callback = function()
+		vim.bo.commentstring = "// %s"
+	end,
+})
