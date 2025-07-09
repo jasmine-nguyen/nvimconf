@@ -41,7 +41,6 @@ return {
 			capabilities.textDocument.formatting = {
 				dynamicRegistration = false,
 			}
-			capabilities.textDocument.semanticTokens.augmentsSyntaxTokens = false
 			capabilities.textDocument.completion.completionItem = {
 				contextSupport = true,
 				snippetSupport = true,
@@ -60,6 +59,7 @@ return {
 
 			-- Apex server setup
 			lspconfig.apex_ls.setup({
+				apex_jar_path = "~/lsp/apex-jorje-lsp.jar",
 				filetypes = { "apex" },
 				apex_enable_semantic_errors = false,   -- Whether to allow Apex Language Server to surface semantic errors
 				apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
@@ -84,7 +84,6 @@ return {
 			-- Go server setup
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
-				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			})
 
