@@ -31,15 +31,14 @@ return {
 		dependencies = { "saghen/blink.cmp" },
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			local lspconfig = require("lspconfig")
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 			capabilities.textDocument.foldingRange = {
-				dynamicRegistration = false,
+				dynamicRegistration = true,
 				lineFoldingOnly = true,
 			}
 			capabilities.textDocument.formatting = {
-				dynamicRegistration = false,
+				dynamicRegistration = true,
 			}
 			capabilities.textDocument.completion.completionItem = {
 				contextSupport = true,
@@ -58,47 +57,54 @@ return {
 			}
 
 			-- Apex server setup
-			lspconfig.apex_ls.setup({
-				apex_jar_path = "~/lsp/apex-jorje-lsp.jar",
+			vim.lsp.config["apex_ls"] = {
+				apex_jar_path = "/Users/nguyen18/lsp/apex-jorje-lsp.jar",
 				filetypes = { "apex" },
-				apex_enable_semantic_errors = false,   -- Whether to allow Apex Language Server to surface semantic errors
+				apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
 				apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 				capabilities = capabilities,
-			})
+			}
+			vim.lsp.enable("apex_ls")
 
 			-- JSON server setup
-			lspconfig.jsonls.setup({
+			vim.lsp.config["jsonls"] = {
 				capabilities = capabilities,
-			})
+			}
+			vim.lsp.enable("jsonls")
 
 			-- Lua server setup
-			lspconfig.lua_ls.setup({
+			vim.lsp.config["lua_ls"] = {
 				capabilities = capabilities,
-			})
+			}
+			vim.lsp.enable("lua_ls")
 
 			-- LWC server setup
-			lspconfig.lwc_ls.setup({
+			vim.lsp.config["lwc_ls"] = {
 				capabilities = capabilities,
-			})
+			}
+			vim.lsp.enable("lwc_ls")
 
 			-- Go server setup
-			lspconfig.gopls.setup({
+			vim.lsp.config["gopls"] = {
 				capabilities = capabilities,
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			})
+			}
+			vim.lsp.enable("gopls")
 
 			-- Golangci lint server setup
-			lspconfig.golangci_lint_ls.setup({
+			vim.lsp.config["golangci_lint_ls"] = {
 				capabilities = capabilities,
-			})
+			}
+			vim.lsp.enable("golangci_lint_ls")
 
 			-- Proto server setup
-			lspconfig.protols.setup({
+			vim.lsp.config["protols"] = {
 				capabilities = capabilities,
-			})
+			}
+			vim.lsp.enable("protols")
 
 			-- Typescript server setup
-			lspconfig.ts_ls.setup({
+			vim.lsp.config["ts_ls"] = {
 				capabilities = capabilities,
 				cmd = { "typescript-language-server", "--stdio" },
 				filetypes = {
@@ -118,12 +124,14 @@ return {
 						completeFunctionCalls = true,
 					},
 				},
+			}
+			vim.lsp.enable("ts_ls")
 
-				-- Yaml server setup
-				lspconfig.yamlls.setup({
-					capabilities = capabilities,
-				}),
-			})
+			-- Yaml server setup
+			vim.lsp.config["yamls"] = {
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("yamls")
 
 			-- A util function that lets us more easily define mappings specific for LSP related items
 			local map = function(mode, keys, action, desc)
