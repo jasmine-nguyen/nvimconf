@@ -14,7 +14,6 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"dockerls",
 					"jsonls",
 					"lua_ls",
 					"lwc_ls",
@@ -33,78 +32,64 @@ return {
 		config = function()
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
-			capabilities.textDocument.foldingRange = {
-				dynamicRegistration = true,
-				lineFoldingOnly = true,
-			}
-			capabilities.textDocument.formatting = {
-				dynamicRegistration = true,
-			}
-			capabilities.textDocument.completion.completionItem = {
-				contextSupport = true,
-				snippetSupport = true,
-				deprecatedSupport = true,
-				commitCharactersSupport = true,
-				resolveSupport = {
-					properties = {
-						"documentation",
-						"detail",
-						"additionalTextEdits",
-					},
-				},
-				labelDetailsSupport = true,
-				documentationFormat = { "markdown", "plaintext" },
-			}
 
 			-- Apex server setup
-			vim.lsp.config["apex_ls"] = {
-				apex_jar_path = "/Users/nguyen18/lsp/apex-jorje-lsp.jar",
+			vim.lsp.config.apex_ls = {
+				cmd = {
+					"java",
+					"-jar",
+					vim.fn.expand("$HOME/apex-jorje-lsp.jar"),
+				},
 				filetypes = { "apex" },
-				apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
-				apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
-				capabilities = capabilities,
+				root_markers = { "sfdx-project.json", ".git" },
+				settings = {
+					apex = {
+						apex_enable_semantic_errors = false,
+						apex_enable_completion_statistics = false,
+					},
+				},
 			}
 			vim.lsp.enable("apex_ls")
 
 			-- JSON server setup
-			vim.lsp.config["jsonls"] = {
+			vim.lsp.config.jsonls = {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("jsonls")
 
 			-- Lua server setup
-			vim.lsp.config["lua_ls"] = {
+			vim.lsp.config.lua_ls = {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("lua_ls")
 
 			-- LWC server setup
-			vim.lsp.config["lwc_ls"] = {
+			vim.lsp.config.lwc_ls = {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("lwc_ls")
 
 			-- Go server setup
-			vim.lsp.config["gopls"] = {
+			vim.lsp.config.gopls = {
 				capabilities = capabilities,
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			}
 			vim.lsp.enable("gopls")
 
 			-- Golangci lint server setup
-			vim.lsp.config["golangci_lint_ls"] = {
+			vim.lsp.config.golangci_lint_ls = {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("golangci_lint_ls")
 
 			-- Proto server setup
-			vim.lsp.config["protols"] = {
+			vim.lsp.config.protols = {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("protols")
 
 			-- Typescript server setup
-			vim.lsp.config["ts_ls"] = {
+			vim.lsp.config.ts_ls = {
 				capabilities = capabilities,
 				cmd = { "typescript-language-server", "--stdio" },
 				filetypes = {
@@ -128,7 +113,7 @@ return {
 			vim.lsp.enable("ts_ls")
 
 			-- Yaml server setup
-			vim.lsp.config["yamls"] = {
+			vim.lsp.config.yamls = {
 				capabilities = capabilities,
 			}
 			vim.lsp.enable("yamls")
