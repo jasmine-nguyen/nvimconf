@@ -25,7 +25,7 @@ return {
 						},
 					},
 				},
-				trigger = { prefetch_on_insert = false, show_in_snippet = false },
+				trigger = { prefetch_on_insert = true, show_in_snippet = true },
 			},
 			fuzzy = {
 				implementation = "prefer_rust",
@@ -36,6 +36,11 @@ return {
 			},
 			sources = {
 				default = { "lsp", "snippets", "buffer", "path" },
+				providers = {
+					buffer = {
+						score_offset = 0, -- increase, default was -3
+					},
+				},
 			},
 		},
 	},
