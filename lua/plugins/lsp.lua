@@ -30,8 +30,7 @@ return {
 		dependencies = { "saghen/blink.cmp" },
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 			-- Apex server setup
 			vim.lsp.config.apex_ls = {
