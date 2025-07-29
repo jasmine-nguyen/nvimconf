@@ -25,7 +25,6 @@ return {
 						filetypes = { "css", "html", "json", "javascript", "typescript", "yaml" },
 					}),
 					none_ls.builtins.formatting.stylua,
-					none_ls.builtins.formatting.xmllint,
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
