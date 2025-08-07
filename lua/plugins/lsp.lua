@@ -132,9 +132,6 @@ return {
 			-- For example, in C this would take you to the header.
 			map("n", "gD", vim.lsp.buf.declaration, "lsp - declaration")
 
-			-- Format current buffer
-			map("n", "<leader>f", vim.lsp.buf.format, "lsp - format")
-
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
 			map("n", "<leader>rn", vim.lsp.buf.rename, "lsp - rename variable")
