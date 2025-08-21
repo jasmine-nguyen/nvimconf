@@ -16,7 +16,7 @@ return {
 					}),
 					null_ls.builtins.diagnostics.yamllint,
 					null_ls.builtins.formatting.buf,
-					null_ls.builtins.formatting.gofumpt,
+					null_ls.builtins.formatting.gofmt,
 					null_ls.builtins.formatting.prettier.with({
 						filetypes = { "apex" },
 						extra_args = { "--plugin=prettier-plugin-apex", "--write" },
