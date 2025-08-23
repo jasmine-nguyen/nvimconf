@@ -14,3 +14,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.bo.commentstring = "// %s"
 	end,
 })
+
+-- Make CursorLine transparent
+vim.api.nvim_create_autocmd('ColorScheme', {
+  command = [[highlight CursorLine guibg=NONE cterm=underline]]
+})
