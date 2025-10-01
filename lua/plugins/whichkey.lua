@@ -55,6 +55,10 @@ return {
 			{ "<leader>rn", vim.lsp.buf.rename, desc = "lsp - rename variable", icon = "" },
 			{ "<leader>ca", vim.lsp.buf.code_action, desc = "lsp - code action", icon = "" },
 			{ "<leader>of", vim.diagnostic.open_float, desc = "lsp - diagnostics", icon = "" },
+			-- SFDX
+			{"<leader>ss", require("sf").set_target_org, desc = "set target org", icon = ""},
+			{"<leader>sp", require("sf").save_and_push, desc = "push current file", icon = ""},
+			{"<leader>sr", require("sf").retrieve, desc = "retrieve current file", icon = ""},
 			-- Snacks
 			{
 				"lz",
