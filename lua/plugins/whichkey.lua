@@ -56,9 +56,10 @@ return {
 			{ "<leader>ca", vim.lsp.buf.code_action, desc = "lsp - code action", icon = "" },
 			{ "<leader>of", vim.diagnostic.open_float, desc = "lsp - diagnostics", icon = "" },
 			-- SFDX
-			{"<leader>ss", require("sf").set_target_org, desc = "set target org", icon = ""},
-			{"<leader>sp", require("sf").save_and_push, desc = "push current file", icon = ""},
-			{"<leader>sr", require("sf").retrieve, desc = "retrieve current file", icon = ""},
+			{ "<leader>ss", require("sf").set_target_org, desc = "set target org", icon = "" },
+			{ "<leader>sp", require("sf").save_and_push, desc = "push current file", icon = "" },
+			{ "<leader>sr", require("sf").retrieve, desc = "retrieve current file", icon = "" },
+			{ "<leader>sc", require("sf").copy_apex_name, desc = "copy apex name", icon = "" },
 			-- Snacks
 			{
 				"lz",
