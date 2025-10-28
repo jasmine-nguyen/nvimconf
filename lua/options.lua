@@ -67,14 +67,10 @@ vim.opt.textwidth = 80
 -- Apex filetypes
 vim.filetype = on
 vim.filetype.add({
-	extension = {
-		cls = "apex",
-		apex = "apex",
-		trigger = "apex",
-		soql = "soql",
-		sosl = "sosl",
-		log = "sflog",
-	},
+  pattern = {
+    ['.*/*.cls'] = 'apex',
+    ['.*/*.trigger'] = 'apex',
+  },
 })
 
 -- sync clipboard between os and neovim.
