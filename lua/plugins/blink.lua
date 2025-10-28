@@ -35,10 +35,23 @@ return {
 				enabled = true,
 			},
 			sources = {
-				default = { "lsp", "snippets", "buffer", "path" },
+				default = { "lsp", "path", "snippets", "buffer" },
 				providers = {
+					lsp = {
+						fallbacks = {},
+						min_keyword_length = 2, -- Number of characters to trigger porvider
+						score_offset = 0, -- Boost/penalize the score of the items
+					},
+					path = {
+						min_keyword_length = 0,
+					},
+					snippets = {
+						min_keyword_length = 2,
+					},
 					buffer = {
-						score_offset = 0, -- increase, default was -3
+						min_keyword_length = 5,
+						max_items = 5,
+						score_offset = 20,
 					},
 				},
 			},
