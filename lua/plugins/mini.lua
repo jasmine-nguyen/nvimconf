@@ -34,6 +34,18 @@ return {
 	{
 		"echasnovski/mini.icons",
 		event = "VeryLazy",
+		config = function()
+			require("mini.icons").setup({
+				style = "glyph",
+				extension = {
+					-- Add icons for custom extension. This will also be used in
+					-- 'file' category for input like 'file.my.ext'.
+					["cls"] = { glyph = "󰢎", hl = "MiniIconsCyan" },
+					["apex"] = { glyph = "󰢎", hl = "MiniIconsCyan" },
+					["trigger"] = { glyph = "󰢎", hl = "MiniIconsCyan" },
+				},
+			})
+		end,
 	},
 	{
 		"echasnovski/mini.pairs",
