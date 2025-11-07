@@ -129,7 +129,7 @@ return {
 
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
-			map('n', '<leader>ca', vim.lsp.buf.code_action, 'lsp - code action')
+			map('n', '<leader>la', vim.lsp.buf.code_action, 'lsp - code action')
 		end,
 	},
 }
