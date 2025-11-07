@@ -8,7 +8,7 @@ return {
 
 	config = function()
 		require("sf").setup({
-			fetch_org_list_at_nvim_start = false,	
+			fetch_org_list_at_nvim_start = false,
 		})
 		local sf = require("sf")
 		vim.keymap.set("n", "<leader>ss", sf.set_target_org, { desc = "set target org" })
