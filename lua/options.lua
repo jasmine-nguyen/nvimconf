@@ -10,6 +10,7 @@ vim.g.have_nerd_font = true
 
 -- make line numbers default
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -24,6 +25,7 @@ vim.opt.breakindent = true
 vim.opt.undofile = true
 
 -- case-insensitive searching unless \c or one or more capital letters in the search term
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- keep signcolumn on by default
@@ -57,6 +59,9 @@ vim.opt.expandtab = false
 
 -- minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- hide the ~ characters in empty lines
+vim.opt.fillchars = { eob = " " }
 
 -- when on, lines longer than the width of the window will wrap and displaying continues on the next line
 vim.opt.wrap = true
