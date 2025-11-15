@@ -70,7 +70,6 @@ vim.opt.wrap = true
 vim.opt.textwidth = 80
 
 -- Apex filetypes
-vim.filetype = on
 vim.filetype.add({
   pattern = {
     ['.*/*.cls'] = 'apex',
