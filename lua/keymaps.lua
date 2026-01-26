@@ -6,15 +6,15 @@ map("n", "<leader>a", "ggVG", { remap = false, desc = "select entire buffer" })
 -- Copy file path to clipboard
 map(
 	"n",
-	"<leader>yn",
-	[[:let @+ = expand('%:t')<cr>:echo   "Yanked filepath: " . expand('%:t')<cr>]],
+	"<leader>yp",
+	[[:let @+ = expand('%')<cr>:let @+ = substitute(@+, getcwd() . '/', '', '')<cr>:echo "Yanked filepath: " . @+<cr>]],
 	{ remap = false, silent = true, desc = "yank filepath" }
 )
 map(
 	"n",
-	"<leader>yp",
-	[[:let @+ = expand('%')<cr>:echo "Yanked directory: " . expand('%')<cr>]],
-	{ remap = false, silent = true, desc = "yank directory" }
+	"<leader>yn",
+	[[:let @+ = expand('%:t')<cr>:echo   "Yanked filename: " . expand('%:t')<cr>]],
+	{ remap = false, silent = true, desc = "yank filename" }
 )
 
 -- General
@@ -37,8 +37,8 @@ map({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
 -- Go to the end of the line in normal mode
 map({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
 -- Move lines up and down in normal mode
-map("n", "-", ":m .+1<CR>==")     -- move line up(n)
-map("n", "_", ":m .-2<CR>==")     -- move line down(n)
+map("n", "-", ":m .+1<CR>==") -- move line up(n)
+map("n", "_", ":m .-2<CR>==") -- move line down(n)
 -- Move lines up and down in visual mode
 map("v", "-", ":m '>+1<CR>gv=gv") -- move line up(v)
 map("v", "_", ":m '<-2<CR>gv=gv") -- move line down(v)

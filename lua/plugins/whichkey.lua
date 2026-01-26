@@ -24,7 +24,7 @@ return {
 			},
 			{
 				"<leader>yp",
-				[[:let @+ = expand('%')<cr>:echo "Yanked filepath: " . expand('%')<cr>]],
+				[[:let @+ = expand('%')<cr>:let @+ = substitute(@+, getcwd() . '/', '', '')<cr>:echo "Yanked filepath: " . @+<cr>]],
 				desc = "yank filepath",
 				icon = "",
 			},
