@@ -10,7 +10,8 @@ vim.g.have_nerd_font = true
 
 -- make line numbers default
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- turn of relativenumber
+vim.opt.relativenumber = false
 
 -- don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -71,10 +72,10 @@ vim.opt.textwidth = 80
 
 -- Apex filetypes
 vim.filetype.add({
-  pattern = {
-    ['.*/*.cls'] = 'apex',
-    ['.*/*.trigger'] = 'apex',
-  },
+	pattern = {
+		[".*/*.cls"] = "apex",
+		[".*/*.trigger"] = "apex",
+	},
 })
 
 -- sync clipboard between os and neovim.
