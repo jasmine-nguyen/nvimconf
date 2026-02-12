@@ -18,7 +18,7 @@ return {
 			},
 			{
 				"<leader>yn",
-				[[:let @+ = expand('%:t')<cr>:echo   "Yanked filename: " . expand('%:t')<cr>]],
+				[[:let @+ = expand('%:t:r')<cr>:echo   "Yanked filename: " . expand('%:t:r')<cr>]],
 				desc = "yank filename",
 				icon = "",
 			},
