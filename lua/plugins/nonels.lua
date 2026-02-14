@@ -7,14 +7,20 @@ return {
 		},
 		config = function()
 			local null_ls = require("null-ls")
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+			local augroup = vim.api.nvim_create_augroup("NullLsFormatting", {})
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.diagnostics.protolint,
+					null_ls.builtins.diagnostics.pylint.with({
+						diagnostics_postprocess = function(diagnostic)
+							diagnostic.code = diagnostic.message_id
+						end,
+					}),
 					null_ls.builtins.diagnostics.golangci_lint.with({
 						args = { "--allow-parallel-runners" },
 					}),
 					null_ls.builtins.diagnostics.yamllint,
+					null_ls.builtins.formatting.black,
 					null_ls.builtins.formatting.buf,
 					null_ls.builtins.formatting.gofumpt,
 					null_ls.builtins.formatting.prettier.with({
