@@ -102,10 +102,10 @@ return {
 			vim.lsp.enable("ts_ls")
 
 			-- Yaml server setup
-			vim.lsp.config("yamls", {
+			vim.lsp.config("yaml-language-server", {
 				capabilities = capabilities,
 			})
-			vim.lsp.enable("yamls")
+			vim.lsp.enable("yaml-language-server")
 
 			-- A util function that lets us more easily define mappings specific for LSP related items
 			local map = function(mode, keys, action, desc)

@@ -53,7 +53,8 @@ return {
 		config = function()
 			require("mini.pairs").setup({
 				mappings = {
-					["<"] = { action = "closeopen", pair = "<>", neigh_pattern = "[^\\].", register = { cr = false } },
+					["<"] = { action = "open", pair = "<>", neigh_pattern = "[^\\].", register = { cr = false } },
+				[">"] = { action = "close", pair = "<>", neigh_pattern = ".[>]", register = { cr = false } },
 					-- Double quote: Prevent pairing if either side is a letter
 					['"'] = {
 						action = "closeopen",
