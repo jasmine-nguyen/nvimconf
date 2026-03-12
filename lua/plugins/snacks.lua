@@ -127,6 +127,11 @@ They make up everything.
 			sources = {
 				explorer = {
 					auto_close = true,
+					layout = {
+						layout = {
+							width = 75,
+						},
+					},
 				},
 			},
 			win = {
