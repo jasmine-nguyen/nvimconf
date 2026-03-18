@@ -20,6 +20,7 @@ return {
 					"golangci_lint_ls",
 					"gopls",
 					"ts_ls",
+					"pyright",
 				},
 			})
 		end,
@@ -70,6 +71,27 @@ return {
 				capabilities = capabilities,
 			})
 			vim.lsp.enable("golangci_lint_ls")
+
+			-- Python server setup
+			vim.lsp.config("pyright", {
+				capabilities = capabilities,
+				before_init = function(_, config)
+					local venv = vim.fs.find("venv", { path = config.root_dir, type = "directory" })[1]
+					if venv then
+						config.settings.python.pythonPath = venv .. "/bin/python"
+					end
+				end,
+				settings = {
+					python = {
+						analysis = {
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
+							diagnosticMode = "openFilesOnly",
+						},
+					},
+				},
+			})
+			vim.lsp.enable("pyright")
 
 			-- Proto server setup
 			vim.lsp.config("protols", {
