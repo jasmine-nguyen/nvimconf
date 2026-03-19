@@ -16,6 +16,7 @@ return {
 		},
 		ensure_installed = {
 			"apex",
+			"dockerfile",
 			"javascript",
 			"json",
 			"lua",
