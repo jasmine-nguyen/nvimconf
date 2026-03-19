@@ -14,6 +14,7 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"docker_compose_language_service",
 					"dockerls",
 					"jsonls",
 					"lua_ls",
@@ -40,6 +41,12 @@ return {
 				apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 			})
 			vim.lsp.enable("apex_ls")
+
+			-- Docker Compose server setup
+			vim.lsp.config("docker_compose_language_service", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("docker_compose_language_service")
 
 			-- Dockerfile server setup
 			vim.lsp.config("dockerls", {
