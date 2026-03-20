@@ -23,6 +23,7 @@ return {
 					"gopls",
 					"ts_ls",
 					"pyright",
+					"yamlls",
 				},
 			})
 		end,
