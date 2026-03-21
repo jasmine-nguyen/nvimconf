@@ -109,10 +109,6 @@ They make up everything.
 					picker:close()
 				end,
 			},
-			files = {
-				follow = true,
-				hidden = true,
-			},
 			enabled = true,
 			jump = {
 				tagstack = true,
@@ -125,7 +121,14 @@ They make up everything.
 				ignorecase = true,
 			},
 			sources = {
+				files = {
+					follow = true,
+					hidden = true,
+					ignored = true,
+				},
 				explorer = {
+					hidden = true,
+					ignored = true,
 					auto_close = true,
 					layout = {
 						layout = {
