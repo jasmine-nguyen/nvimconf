@@ -90,3 +90,18 @@ vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 	vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true } })
 end)
+
+-- Clipboard for ssh
+if vim.env.SSH_CONNECTION or vim.env.SSH_TTY or vim.env.SSH_CLIENT then
+	vim.g.clipboard = {
+		name = "OSC 52",
+		copy = {
+			["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+			["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+		},
+		paste = {
+			["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+			["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+		},
+	}
+end
