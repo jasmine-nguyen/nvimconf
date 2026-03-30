@@ -22,6 +22,7 @@ return {
 					"golangci_lint_ls",
 					"gopls",
 					"ts_ls",
+					"marksman",
 					"pyright",
 					"yamlls",
 				},
@@ -138,34 +139,24 @@ return {
 			})
 			vim.lsp.enable("ts_ls")
 
+			-- Markdown server setup (wiki-link diagnostics disabled for Obsidian/Quartz)
+			vim.lsp.config("marksman", {
+				capabilities = capabilities,
+				settings = {
+					marksman = {
+						wiki = { style = "obsidian" },
+					},
+				},
+			})
+			vim.lsp.enable("marksman")
+
 			-- Yaml server setup
 			vim.lsp.config("yamlls", {
 				capabilities = capabilities,
 			})
 			vim.lsp.enable("yamlls")
 
-			-- A util function that lets us more easily define mappings specific for LSP related items
-			local map = function(mode, keys, action, desc)
-				desc = desc or ""
-				local opts = { noremap = true, silent = true, desc = desc }
-				vim.keymap.set(mode, keys, action, opts)
-			end
-
-			-- Jump to the definition of the word under your cursor.
-			-- To jump back, press <C-t>.
-			map("n", "gd", vim.lsp.buf.definition, "lsp - definition")
-
-			-- WARN: This is not Goto Definition, this is Goto Declaration.
-			-- For example, in C this would take you to the header.
-			map("n", "gD", vim.lsp.buf.declaration, "lsp - declaration")
-
-			-- Rename the variable under your cursor.
-			--  Most Language Servers support renaming across files, etc.
-			map("n", "<leader>rn", vim.lsp.buf.rename, "lsp - rename variable")
-
-			-- Execute a code action, usually your cursor needs to be on top of an error
-			-- or a suggestion from your LSP for this to activate.
-			map("n", "<leader>la", vim.lsp.buf.code_action, "lsp - code action")
+			-- LSP keymaps are defined in whichkey.lua
 		end,
 	},
 }

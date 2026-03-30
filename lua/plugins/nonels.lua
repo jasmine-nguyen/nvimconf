@@ -16,6 +16,9 @@ return {
 					null_ls.builtins.diagnostics.golangci_lint.with({
 						args = { "--allow-parallel-runners" },
 					}),
+					null_ls.builtins.diagnostics.markdownlint.with({
+						extra_args = { "--config", vim.fn.stdpath("config") .. "/.markdownlint.jsonc" },
+					}),
 					null_ls.builtins.diagnostics.yamllint,
 					require("none-ls.formatting.ruff"),
 				require("none-ls.formatting.ruff_format"),
@@ -26,12 +29,12 @@ return {
 						extra_args = { "--plugin=prettier-plugin-apex", "--write" },
 					}),
 					null_ls.builtins.formatting.prettierd.with({
-						filetypes = { "css", "html", "json", "javascript", "typescript", "yaml" },
+						filetypes = { "css", "html", "json", "javascript", "markdown", "typescript", "yaml" },
 					}),
 					null_ls.builtins.formatting.stylua,
 				},
 				on_attach = function(client, bufnr)
-					if client.supports_method("textDocument/formatting") then
+					if client:supports_method("textDocument/formatting") then
 						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 						vim.api.nvim_create_autocmd("BufWritePre", {
 							group = augroup,
