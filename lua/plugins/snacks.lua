@@ -23,7 +23,7 @@ return {
 		-- Dashboard
 		dashboard = {
 			enabled = true,
-			autokeys = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+			autokeys = "abdehjklmoprstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 			preset = {
 				header = [[
 Never trust an atom.

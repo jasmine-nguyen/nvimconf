@@ -6,27 +6,36 @@ return {
 		build = ":MasonUpdate",
 		config = function()
 			require("mason").setup()
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"docker_compose_language_service",
-					"dockerls",
-					"jsonls",
-					"lua_ls",
-					"lwc_ls",
-					"golangci_lint_ls",
-					"gopls",
-					"ts_ls",
-					"marksman",
-					"pyright",
-					"yamlls",
-				},
-			})
+
+			local ensure_installed = {
+				-- lsp servers
+				"docker-compose-language-service",
+				"dockerfile-language-server",
+				"gopls",
+				"golangci-lint-langserver",
+				"json-lsp",
+				"lua-language-server",
+				"lwc-language-server",
+				"marksman",
+				"pyright",
+				"typescript-language-server",
+				"yaml-language-server",
+				-- linters & formatters
+				"buf",
+				"markdownlint",
+				"prettier",
+				"protolint",
+				"ruff",
+			}
+			local registry = require("mason-registry")
+			registry.refresh(function()
+				for _, name in ipairs(ensure_installed) do
+					local pkg = registry.get_package(name)
+					if not pkg:is_installed() then
+						pkg:install()
+					end
+				end
+			end)
 		end,
 	},
 	{
