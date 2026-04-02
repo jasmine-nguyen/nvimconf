@@ -20,6 +20,7 @@ return {
 			"typescript",
 			"markdown",
 			"markdown_inline",
+			"python",
 			"sql",
 			"yaml",
 		},

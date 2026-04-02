@@ -24,6 +24,7 @@ return {
 				"buf",
 				"markdownlint",
 				"prettier",
+				"prettierd",
 				"protolint",
 				"ruff",
 			}
