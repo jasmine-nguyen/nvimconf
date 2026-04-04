@@ -125,7 +125,7 @@ They make up everything.
 					follow = true,
 					hidden = true,
 					ignored = true,
-					exclude = { "__pycache__", "node_modules" },
+					exclude = { "__pycache__", "node_modules", "venv" },
 				},
 				explorer = {
 					hidden = true,

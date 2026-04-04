@@ -5,6 +5,7 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvimtools/none-ls-extras.nvim",
+			"williamboman/mason.nvim",
 		},
 		config = function()
 			local null_ls = require("null-ls")
