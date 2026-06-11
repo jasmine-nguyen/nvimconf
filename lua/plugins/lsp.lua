@@ -78,9 +78,17 @@ return {
 			})
 			vim.lsp.enable("lua_ls")
 
-			-- LWC server setup
+			-- LWC server setup (only attach inside Salesforce projects;
+			-- otherwise lwc-language-server crashes on `initialize` with
+			-- "Cannot read properties of null (reading 'map')")
 			vim.lsp.config("lwc_ls", {
 				capabilities = capabilities,
+				root_dir = function(bufnr, on_dir)
+					local root = vim.fs.root(bufnr, { "sfdx-project.json" })
+					if root then
+						on_dir(root)
+					end
+				end,
 			})
 			vim.lsp.enable("lwc_ls")
 
