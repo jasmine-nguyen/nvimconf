@@ -18,6 +18,7 @@ return {
 				"lwc-language-server",
 				"marksman",
 				"pyright",
+				"terraform-ls",
 				"typescript-language-server",
 				"yaml-language-server",
 				-- linters & formatters
@@ -132,6 +133,13 @@ return {
 				capabilities = capabilities,
 			})
 			vim.lsp.enable("protols")
+
+			-- Terraform server setup
+			vim.lsp.config("terraformls", {
+				capabilities = capabilities,
+				filetypes = { "terraform", "terraform-vars" },
+			})
+			vim.lsp.enable("terraformls")
 
 			-- Typescript server setup
 			vim.lsp.config("ts_ls", {

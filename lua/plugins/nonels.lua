@@ -21,6 +21,7 @@ return {
 						extra_args = { "--config", vim.fn.stdpath("config") .. "/.markdownlint.jsonc" },
 					}),
 					null_ls.builtins.diagnostics.yamllint,
+					null_ls.builtins.diagnostics.terraform_validate,
 					require("none-ls.formatting.ruff"),
 				require("none-ls.formatting.ruff_format"),
 					null_ls.builtins.formatting.buf,
@@ -33,6 +34,7 @@ return {
 						filetypes = { "css", "html", "json", "javascript", "markdown", "typescript", "yaml" },
 					}),
 					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.terraform_fmt,
 				},
 				on_attach = function(client, bufnr)
 					if client:supports_method("textDocument/formatting") then
