@@ -14,6 +14,11 @@ map("n", "<C-q>", "Q", { noremap = true, desc = "replay last register" })
 -- Go to the beginning/end of the line
 map({ "n", "v" }, "gh", "^", { desc = "go to the beginning line" })
 map({ "n", "v" }, "gl", "$", { desc = "go to the end of the line" })
+map({ "n", "v" }, "gm", "50%", { desc = "go to the middle of the file" })
+
+-- Indent/dedent visual selection with Tab, keeping the selection active
+map("x", "<Tab>", ">gv", { desc = "indent selection" })
+map("x", "<S-Tab>", "<gv", { desc = "dedent selection" })
 
 -- Move lines up and down
 map("n", "-", ":m .+1<CR>==") -- move line up(n)

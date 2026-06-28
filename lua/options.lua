@@ -70,8 +70,21 @@ vim.opt.wrap = true
 -- maximum width of text that is being inserted.  a longer line will be broken after white space to get this width.
 vim.opt.textwidth = 80
 
+-- keep textwidth for `gq`/colorcolumn, but stop auto-breaking lines while typing.
+-- runs on FileType so it wins over built-in ftplugins that load after this file.
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "t", "c" })
+	end,
+})
+
 -- Apex filetypes
 vim.filetype.add({
+	extension = {
+		-- `.tf` defaults to the legacy `tf` filetype on empty/new files
+		-- (Neovim's detection is content-based), which blocks terraform-ls.
+		tf = "terraform",
+	},
 	pattern = {
 		[".*/*.cls"] = "apex",
 		[".*/*.trigger"] = "apex",

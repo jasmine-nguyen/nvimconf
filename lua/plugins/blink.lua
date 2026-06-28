@@ -10,6 +10,10 @@ return {
 				},
 				keymap = {
 					preset = "inherit",
+					-- Enter must execute the command/search, not just accept the
+					-- completion (plain "accept" leaves you stuck in cmdline, so
+					-- following keys like n/p get typed into the search string).
+					["<CR>"] = { "accept_and_enter", "fallback" },
 				},
 			},
 			completion = {
@@ -31,7 +35,7 @@ return {
 			fuzzy = {
 				implementation = "prefer_rust",
 			},
-			keymap = { preset = "super-tab" },
+			keymap = { preset = "enter" },
 			signature = {
 				enabled = true,
 			},

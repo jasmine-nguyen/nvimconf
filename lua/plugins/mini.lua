@@ -55,11 +55,13 @@ return {
 				mappings = {
 					["<"] = { action = "open", pair = "<>", neigh_pattern = "[^\\].", register = { cr = false } },
 				[">"] = { action = "close", pair = "<>", neigh_pattern = ".[>]", register = { cr = false } },
-					-- Double quote: Prevent pairing if either side is a letter
+					-- Double quote: allow string prefixes (f"/r"/b"/rb") to pair by
+					-- permitting a word char on the left; still skip pairing before
+					-- a word char (right) and after a backslash escape.
 					['"'] = {
 						action = "closeopen",
 						pair = '""',
-						neigh_pattern = "[^%w\\][^%w]",
+						neigh_pattern = "[^\\][^%w]",
 						register = { cr = false },
 					},
 					-- Single quote: Prevent pairing if either side is a letter
