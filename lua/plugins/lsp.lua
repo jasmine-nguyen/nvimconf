@@ -138,6 +138,16 @@ return {
 			vim.lsp.config("terraformls", {
 				capabilities = capabilities,
 				filetypes = { "terraform", "terraform-vars" },
+				root_dir = function(bufnr, cb)
+					local fname = vim.api.nvim_buf_get_name(bufnr)
+					local markers = vim.fs.find({ ".terraform", ".terraform.lock.hcl" }, {
+						path = vim.fs.dirname(fname),
+						upward = true,
+					})
+					if markers[1] then
+						cb(vim.fs.dirname(markers[1]))
+					end
+				end,
 			})
 			vim.lsp.enable("terraformls")
 

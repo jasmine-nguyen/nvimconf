@@ -21,7 +21,6 @@ return {
 						extra_args = { "--config", vim.fn.stdpath("config") .. "/.markdownlint.jsonc" },
 					}),
 					null_ls.builtins.diagnostics.yamllint,
-					null_ls.builtins.diagnostics.terraform_validate,
 					require("none-ls.formatting.ruff"),
 				require("none-ls.formatting.ruff_format"),
 					null_ls.builtins.formatting.buf,
