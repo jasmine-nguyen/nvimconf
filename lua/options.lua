@@ -70,6 +70,9 @@ vim.opt.wrap = true
 -- maximum width of text that is being inserted.  a longer line will be broken after white space to get this width.
 vim.opt.textwidth = 80
 
+-- never create swap files
+vim.opt.swapfile = false
+
 -- keep textwidth for `gq`/colorcolumn, but stop auto-breaking lines while typing.
 -- runs on FileType so it wins over built-in ftplugins that load after this file.
 vim.api.nvim_create_autocmd("FileType", {

@@ -129,7 +129,7 @@ They make up everything.
 				},
 				explorer = {
 					hidden = true,
-					ignored = true,
+					ignored = false,
 					auto_close = true,
 					layout = {
 						layout = {

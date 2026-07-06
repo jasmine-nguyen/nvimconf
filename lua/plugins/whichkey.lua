@@ -110,6 +110,27 @@ return {
 				icon = "󰙅",
 			},
 			{
+				"fl",
+				function()
+					Snacks.picker.lines()
+				end,
+				desc = "find line in buffer",
+			},
+			{
+				"fs",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "find symbol in file",
+			},
+			{
+				"fS",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "find symbol in workspace",
+			},
+			{
 				"fm",
 				function()
 					Snacks.picker.marks()
