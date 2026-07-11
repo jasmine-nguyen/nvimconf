@@ -3,6 +3,7 @@ return {
 		"saghen/blink.cmp",
 		version = "v0.*",
 		event = "InsertEnter",
+		dependencies = { "fang2hou/blink-copilot" },
 		opts = {
 			cmdline = {
 				completion = {
@@ -19,7 +20,8 @@ return {
 			completion = {
 				accept = { auto_brackets = { enabled = true } },
 				documentation = { auto_show = true },
-				ghost_text = { enabled = true },
+				-- Disabled so it doesn't fight with copilot.lua's inline suggestions
+				ghost_text = { enabled = false },
 				menu = {
 					auto_show = true,
 					draw = {
@@ -40,8 +42,14 @@ return {
 				enabled = true,
 			},
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "copilot", "lsp", "path", "snippets", "buffer" },
 				providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						async = true,
+						score_offset = 100, -- Keep Copilot items at the top of the menu
+					},
 					lsp = {
 						fallbacks = {},
 						min_keyword_length = 2, -- Number of characters to trigger provider
