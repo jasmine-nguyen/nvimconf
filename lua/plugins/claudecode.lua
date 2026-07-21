@@ -1,8 +1,27 @@
 return {
 	"coder/claudecode.nvim",
 	dependencies = { "folke/snacks.nvim" },
-	config = true,
+	opts = {
+		terminal = {
+			snacks_win_opts = {
+				keys = {
+					-- Same key as the normal-mode toggle below, so <C-,>
+					-- toggles Claude from either side without leaving
+					-- terminal mode
+					claude_hide = {
+						"<C-,>",
+						function(self)
+							self:hide()
+						end,
+						mode = "t",
+						desc = "Hide Claude",
+					},
+				},
+			},
+		},
+	},
 	keys = {
+		{ "<C-,>", "<cmd>ClaudeCodeFocus<cr>", mode = { "n", "x" }, desc = "Toggle Claude" },
 		{ "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
 		{ "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
 		{ "<leader>cr", "<cmd>ClaudeCodeResume<cr>", desc = "Resume Claude" },
