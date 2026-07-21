@@ -7,53 +7,30 @@ return {
 		local ts = require("nvim-treesitter")
 		ts.setup()
 
-		local parsers = {
-			"apex",
-			"dockerfile",
-			"javascript",
-			"json",
-			"lua",
-			"go",
-			"gomod",
-			"gosum",
-			"proto",
-			"regex",
-			"terraform",
-			"typescript",
-			"markdown",
-			"markdown_inline",
-			"python",
-			"sql",
-			"yaml",
-		}
+		local available = ts.get_available()
 
-		local installed = ts.get_installed("parsers")
-		local to_install = {}
-		for _, p in ipairs(parsers) do
-			if not vim.tbl_contains(installed, p) then
-				table.insert(to_install, p)
-			end
-		end
-		if #to_install > 0 then
-			ts.install(to_install)
+		local function start(buf, lang)
+			vim.treesitter.start(buf, lang)
+			vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 		end
 
-		local filetypes = {}
-		for _, p in ipairs(parsers) do
-			local fts = vim.treesitter.language.get_filetypes(p)
-			for _, ft in ipairs(fts) do
-				table.insert(filetypes, ft)
-			end
-		end
-
+		-- Install parsers on demand: only when a file of that language is
+		-- opened, so a fresh clone doesn't compile parsers it never uses.
 		vim.api.nvim_create_autocmd("FileType", {
 			group = vim.api.nvim_create_augroup("treesitter-start", { clear = true }),
-			pattern = filetypes,
 			callback = function(args)
 				local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
-				if lang and vim.treesitter.language.add(lang) then
-					vim.treesitter.start(args.buf, lang)
-					vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				if not lang then
+					return
+				end
+				if vim.treesitter.language.add(lang) then
+					start(args.buf, lang)
+				elseif vim.tbl_contains(available, lang) then
+					ts.install(lang):await(function()
+						if vim.api.nvim_buf_is_valid(args.buf) and vim.treesitter.language.add(lang) then
+							start(args.buf, lang)
+						end
+					end)
 				end
 			end,
 		})
