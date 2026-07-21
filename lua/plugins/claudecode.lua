@@ -22,7 +22,6 @@ return {
 	},
 	keys = {
 		{ "<C-,>", "<cmd>ClaudeCodeFocus<cr>", mode = { "n", "x" }, desc = "Toggle Claude" },
-		{ "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
 		{ "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
 		{ "<leader>cr", "<cmd>ClaudeCodeResume<cr>", desc = "Resume Claude" },
 		{ "<leader>cC", "<cmd>ClaudeCodeContinue<cr>", desc = "Continue Claude" },
