@@ -48,29 +48,33 @@ return {
 				desc = "replace word under cursor with lowercase",
 				icon = " ",
 			},
-			-- LSP
+			-- LSP (<leader>l)
+			{ "<leader>l", group = "lsp" },
 			{ "gd", vim.lsp.buf.definition, desc = "lsp - definition", icon = "" },
 			{ "gD", vim.lsp.buf.declaration, desc = "lsp - declaration", icon = "" },
-			{ "<leader>f", vim.lsp.buf.format, desc = "lsp - format", icon = "" },
-			{ "<leader>rn", vim.lsp.buf.rename, desc = "lsp - rename variable", icon = "" },
-			{ "<leader>ca", vim.lsp.buf.code_action, desc = "lsp - code action", icon = "" },
-			{ "<leader>of", vim.diagnostic.open_float, desc = "lsp - diagnostics", icon = "" },
+			{ "<leader>lf", vim.lsp.buf.format, desc = "lsp - format", icon = "" },
+			{ "<leader>lr", vim.lsp.buf.rename, desc = "lsp - rename variable", icon = "" },
+			{ "<leader>la", vim.lsp.buf.code_action, desc = "lsp - code action", icon = "" },
+			{ "<leader>ld", vim.diagnostic.open_float, desc = "lsp - diagnostics", icon = "" },
 			-- -- SFDX
 			-- { "<leader>ss", require("sf").set_target_org, desc = "set target org", icon = "" },
 			-- { "<leader>sp", require("sf").save_and_push, desc = "push current file", icon = "" },
 			-- { "<leader>sr", require("sf").retrieve, desc = "retrieve current file", icon = "" },
 			-- { "<leader>sc", require("sf").copy_apex_name, desc = "copy apex name", icon = "" },
-			-- Snacks
+			-- Git (<leader>g)
+			{ "<leader>g", group = "git" },
 			{
-				"lz",
+				"<leader>gg",
 				function()
 					Snacks.lazygit()
 				end,
 				desc = "open lazygit",
 				icon = "",
 			},
+			-- Find / Picker (<leader>f)
+			{ "<leader>f", group = "find" },
 			{
-				"ff",
+				"<leader>ff",
 				function()
 					Snacks.picker.files()
 				end,
@@ -78,7 +82,7 @@ return {
 				icon = "",
 			},
 			{
-				"fg",
+				"<leader>fg",
 				function()
 					Snacks.picker.grep()
 				end,
@@ -86,7 +90,7 @@ return {
 				icon = "",
 			},
 			{
-				"fw",
+				"<leader>fw",
 				function()
 					Snacks.picker.grep_word()
 				end,
@@ -94,7 +98,7 @@ return {
 				icon = "",
 			},
 			{
-				"fb",
+				"<leader>fb",
 				function()
 					Snacks.picker.grep_buffers()
 				end,
@@ -102,7 +106,7 @@ return {
 				icon = "",
 			},
 			{
-				"fe",
+				"<leader>fe",
 				function()
 					Snacks.picker.explorer()
 				end,
@@ -110,28 +114,28 @@ return {
 				icon = "󰙅",
 			},
 			{
-				"fl",
+				"<leader>fl",
 				function()
 					Snacks.picker.lines()
 				end,
 				desc = "find line in buffer",
 			},
 			{
-				"fs",
+				"<leader>fs",
 				function()
 					Snacks.picker.lsp_symbols()
 				end,
 				desc = "find symbol in file",
 			},
 			{
-				"fS",
+				"<leader>fS",
 				function()
 					Snacks.picker.lsp_workspace_symbols()
 				end,
 				desc = "find symbol in workspace",
 			},
 			{
-				"fm",
+				"<leader>fm",
 				function()
 					Snacks.picker.marks()
 				end,
@@ -139,7 +143,7 @@ return {
 				icon = "",
 			},
 			{
-				"fi",
+				"<leader>fi",
 				function()
 					Snacks.picker.icons()
 				end,
@@ -147,7 +151,7 @@ return {
 				icon = "",
 			},
 			{
-				"fc",
+				"<leader>fc",
 				function()
 					Snacks.picker.todo_comments()
 				end,
@@ -155,12 +159,12 @@ return {
 				icon = "",
 			},
 			{
-				"tt",
+				"<leader>fh",
 				function()
-					Snacks.terminal.toggle()
+					Snacks.picker.git_log_file()
 				end,
-				desc = "toggle terminal",
-				icon = "",
+				desc = "find file history",
+				icon = "",
 			},
 			{
 				"<leader>z",
@@ -175,7 +179,15 @@ return {
 			{ "<leader>sh", "<C-w>s", desc = "window - split horizontally", icon = "" },
 			{ "<leader>se", "<C-w>=", desc = "window - make splits equal size", icon = "" },
 			{ "<leader>sx", "<cmd>close<CR>", desc = "window - close current split", icon = "" },
-			-- Tab management
+			-- Tabs & terminal (<leader>t)
+			{
+				"<leader>tt",
+				function()
+					Snacks.terminal.toggle()
+				end,
+				desc = "toggle terminal",
+				icon = "",
+			},
 			{ "<leader>to", "<cmd>tabnew<CR>", desc = "tab - open new", icon = " " },
 			{ "<leader>tx", "<cmd>tabclose<CR>", desc = "tab - close", icon = " " },
 			{ "<leader>tn", "<cmd>tabn<CR>", desc = "tab - next", icon = " " },
